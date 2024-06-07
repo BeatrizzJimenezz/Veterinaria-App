@@ -1,31 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="ExpHistorial.cs">
+    <Compile Update="Forms\ExpHistorial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ExpInfo.cs">
+    <Compile Update="Forms\ExpInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ExpNuevaConsulta.cs">
+    <Compile Update="Forms\ExpNuevaConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ExpNuevoExamen.cs">
+    <Compile Update="Forms\ExpNuevoExamen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ExpVacunas.cs">
+    <Compile Update="Forms\ExpVacunas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Inicio.cs">
+    <Compile Update="Forms\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Menu.cs">
+    <Compile Update="Forms\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="MenuAdministracion.cs">
+    <Compile Update="Forms\MenuAdministracion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ExpedienteVistaPrincipal.cs">
+    <Compile Update="Forms\ExpedienteVistaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="WidgetVacuna.cs">

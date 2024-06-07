@@ -15,7 +15,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="MenuAddPaciente.cs">
+    <Compile Update="Forms\MenuAddPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -25,6 +25,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Logic\" />
   </ItemGroup>
 
 </Project>
