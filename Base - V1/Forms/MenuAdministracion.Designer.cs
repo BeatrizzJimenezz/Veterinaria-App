@@ -31,9 +31,6 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel3 = new Panel();
             tblPacientes = new DataGridView();
-            Num = new DataGridViewTextBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            FechaIngreso = new DataGridViewTextBoxColumn();
             btnVerPaciente = new Button();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tblPacientes).BeginInit();
@@ -63,7 +60,6 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             tblPacientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             tblPacientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tblPacientes.Columns.AddRange(new DataGridViewColumn[] { Num, Nombre, FechaIngreso });
             tblPacientes.Dock = DockStyle.Fill;
             tblPacientes.GridColor = Color.FromArgb(158, 161, 176);
             tblPacientes.Location = new Point(0, 0);
@@ -71,24 +67,6 @@
             tblPacientes.RowHeadersWidth = 51;
             tblPacientes.Size = new Size(855, 530);
             tblPacientes.TabIndex = 0;
-            // 
-            // Num
-            // 
-            Num.HeaderText = "Responsable";
-            Num.MinimumWidth = 6;
-            Num.Name = "Num";
-            // 
-            // Nombre
-            // 
-            Nombre.HeaderText = "Paciente";
-            Nombre.MinimumWidth = 6;
-            Nombre.Name = "Nombre";
-            // 
-            // FechaIngreso
-            // 
-            FechaIngreso.HeaderText = "Fecha de Ingreso";
-            FechaIngreso.MinimumWidth = 6;
-            FechaIngreso.Name = "FechaIngreso";
             // 
             // btnVerPaciente
             // 
@@ -106,7 +84,7 @@
             btnVerPaciente.UseVisualStyleBackColor = false;
             btnVerPaciente.Click += btnVerPaciente_Click;
             // 
-            // AdminLayer
+            // MenuAdministracion
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -117,7 +95,7 @@
             Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.None;
             MinimumSize = new Size(882, 593);
-            Name = "AdminLayer";
+            Name = "MenuAdministracion";
             Text = "Pantalla2";
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)tblPacientes).EndInit();
@@ -129,8 +107,5 @@
         private Panel panel3;
         private Button btnVerPaciente;
         private DataGridView tblPacientes;
-        private DataGridViewTextBoxColumn Num;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn FechaIngreso;
     }
 }

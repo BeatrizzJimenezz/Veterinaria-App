@@ -376,8 +376,9 @@
             btnAgregar.TabIndex = 11;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
             // 
-            // AgregarPaciente
+            // MenuAddPaciente
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -387,7 +388,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             MinimumSize = new Size(882, 593);
-            Name = "AgregarPaciente";
+            Name = "MenuAddPaciente";
             Text = "Pantalla3";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
