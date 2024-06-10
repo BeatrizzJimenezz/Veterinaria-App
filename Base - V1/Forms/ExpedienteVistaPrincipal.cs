@@ -14,6 +14,7 @@ namespace Base___V1
     {
         private string idDueño;
         private string idMascota;
+        public int idConsulta;
         public ExpedienteVistaPrincipal(string idMascota, string idDueño)
         {
             this.idMascota = idMascota;
@@ -40,7 +41,7 @@ namespace Base___V1
         private void btnNewConsulta_Click(object sender, EventArgs e)
         {
             this.PnlFormLoader2.Controls.Clear();
-            ExpNuevaConsulta agregarConsulta = new ExpNuevaConsulta(idDueño, idMascota, true,0) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            ExpNuevaConsulta agregarConsulta = new ExpNuevaConsulta(idDueño, idMascota, true,0,this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             agregarConsulta.FormBorderStyle = FormBorderStyle.None;
             this.PnlFormLoader2.Controls.Add(agregarConsulta);
             agregarConsulta.Show();
@@ -49,7 +50,7 @@ namespace Base___V1
         private void btnNewExamen_Click(object sender, EventArgs e)
         {
             this.PnlFormLoader2.Controls.Clear();
-            ExpNuevoExamen agregarExamen = new ExpNuevoExamen() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            ExpNuevoExamen agregarExamen = new ExpNuevoExamen(int.Parse(idDueño), int.Parse(idMascota),idConsulta,true) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             agregarExamen.FormBorderStyle = FormBorderStyle.None;
             this.PnlFormLoader2.Controls.Add(agregarExamen);
             agregarExamen.Show();

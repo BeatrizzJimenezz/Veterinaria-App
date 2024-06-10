@@ -226,7 +226,7 @@ namespace Base___V1.Logic
 
 
         }
-        public void InsertarConsulta(Consulta consulta)
+        public bool InsertarConsulta(Consulta consulta)
         {
             Comando.Connection = Conexion.abrirConexion();
             Comando.CommandText = @"
@@ -342,10 +342,12 @@ namespace Base___V1.Logic
             {
                 Comando.ExecuteNonQuery();
                 MessageBox.Show("Consulta registrada de manera exitosa", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al insertar la mascota " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al insertar la consulta " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
             finally
             {
@@ -577,5 +579,171 @@ namespace Base___V1.Logic
                 Conexion.cerrarConexion();
             }
         }
+        public void insertarExamenFisico(ExamenFisico examen)
+        {
+            Comando.Connection = Conexion.abrirConexion();
+            Comando.CommandText = @"
+                INSERT INTO tb_examenfisico (fc, temp, sonido_cardiaco, reflejo_pupilar, fr, pulso, anisocoria, dentadura, mucosas, tonsi, refl_tusigeno, tllc, plp_Abdominal, deshidratado, palmopercusion, riñon, vejiga, dedos, higado, prepucio, intestino, testi_vulva, condi_corporal, otras_observaciones, dx_presuntivo, dx_diferencial, examenes_lab, idMascota, idConsulta)
+                VALUES (@Fc, @Temp, @SonidoCardiaco, @ReflejoPupilar, @Fr, @Pulso, @Anisocoria, @Dentadura, @Mucosas, @Tonsi, @ReflTusigeno, @Tllc, @PlpAbdominal, @Deshidratado, @Palmopercusion, @Rinon, @Vejiga, @Dedos, @Higado, @Prepucio, @Intestino, @TestiVulva, @CondiCorporal, @OtrasObservaciones, @DxPresuntivo, @DxDiferencial, @ExamenesLab, @IdMascota22, @IdConsulta)";
+            Comando.Parameters.AddWithValue("@Fc", examen.Fc ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@Temp", examen.Temp ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@SonidoCardiaco", examen.SonidoCardiaco ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@ReflejoPupilar", examen.ReflejoPupilar ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@Fr", examen.Fr ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@Pulso", examen.Pulso ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@Anisocoria", examen.Anisocoria ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@Dentadura", examen.Dentadura ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@Mucosas", examen.Mucosas ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@Tonsi", examen.Tonsi ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@ReflTusigeno", examen.ReflTusigeno ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@Tllc", examen.Tllc ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@PlpAbdominal", examen.PlpAbdominal ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@Deshidratado", examen.Deshidratado ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@Palmopercusion", examen.Palmopercusion ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@Rinon", examen.Rinon ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@Vejiga", examen.Vejiga ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@Dedos", examen.Dedos ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@Higado", examen.Higado ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@Prepucio", examen.Prepucio ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@Intestino", examen.Intestino ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@TestiVulva", examen.TestiVulva ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@CondiCorporal", examen.CondiCorporal ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@OtrasObservaciones", examen.OtrasObservaciones ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@DxPresuntivo", examen.DxPresuntivo ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@DxDiferencial", examen.DxDiferencial ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@ExamenesLab", examen.ExamenesLab ?? (object)DBNull.Value);
+            Comando.Parameters.AddWithValue("@IdMascota22", examen.IdMascota);
+            Comando.Parameters.AddWithValue("@IdConsulta", examen.IdConsulta ?? (object)DBNull.Value);
+
+            try
+            {
+                Comando.ExecuteNonQuery();
+                MessageBox.Show("Examen fisico registrado de manera exitosa", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al insertar el examen fisico " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Conexion.cerrarConexion();
+            }
+        }
+        public void editarExamenFisico(ExamenFisico exp)
+        {
+            try
+            {
+                Comando.Connection = Conexion.abrirConexion();
+                Comando.CommandText = $@"
+                UPDATE tb_examenfisico
+                SET 
+                    fc = '{exp.Fc}',
+                    temp = '{exp.Temp}',
+                    sonido_cardiaco = '{exp.SonidoCardiaco}',
+                    reflejo_pupilar = '{exp.ReflejoPupilar}',
+                    fr = '{exp.Fr}',
+                    pulso = '{exp.Pulso}',
+                    anisocoria = '{exp.Anisocoria}',
+                    dentadura = '{exp.Dentadura}',
+                    mucosas = '{exp.Mucosas}',
+                    tonsi = '{exp.Tonsi}',
+                    refl_tusigeno = '{exp.ReflTusigeno}',
+                    tllc = '{exp.Tllc}',
+                    plp_Abdominal = '{exp.PlpAbdominal}',
+                    deshidratado = '{exp.Deshidratado}',
+                    palmopercusion = '{exp.Palmopercusion}',
+                    riñon = '{exp.Rinon}',
+                    vejiga = '{exp.Vejiga}',
+                    dedos = '{exp.Dedos}',
+                    higado = '{exp.Higado}',
+                    prepucio = '{exp.Prepucio}',
+                    intestino = '{exp.Intestino}',
+                    testi_vulva = '{exp.TestiVulva}',
+                    condi_corporal = '{exp.CondiCorporal}',
+                    otras_observaciones = '{exp.OtrasObservaciones}',
+                    dx_presuntivo = '{exp.DxPresuntivo}',
+                    dx_diferencial = '{exp.DxDiferencial}',
+                    examenes_lab = '{exp.ExamenesLab}'
+                WHERE idConsulta = {exp.IdConsulta}";
+                Comando.CommandType = CommandType.Text;
+                Comando.ExecuteNonQuery();
+                Conexion.cerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("Error al editar los datos del examen. Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            finally
+            {
+                Conexion.cerrarConexion();
+            }
+
+        }
+        public ExamenFisico GetExamenFisico(int idExamen)
+        {
+            ExamenFisico exam = new ExamenFisico();
+            Comando.Connection = Conexion.abrirConexion();
+            Comando.CommandText = $"SELECT * FROM tb_examenfisico WHERE idConsulta = {idExamen}";
+            Comando.CommandType = CommandType.Text;
+            MySqlDataReader dr = Comando.ExecuteReader();
+            if (dr.Read()) {
+                exam.IdExamenPrimaria = dr.GetInt32("idExamen");
+                exam.Fc = dr.IsDBNull(dr.GetOrdinal("fc")) ? null : dr.GetString("fc");
+                exam.Temp = dr.IsDBNull(dr.GetOrdinal("temp")) ? null : dr.GetString("temp");
+                exam.SonidoCardiaco = dr.IsDBNull(dr.GetOrdinal("sonido_cardiaco")) ? null : dr.GetString("sonido_cardiaco");
+                exam.ReflejoPupilar = dr.IsDBNull(dr.GetOrdinal("reflejo_pupilar")) ? null : dr.GetString("reflejo_pupilar");
+                exam.Fr = dr.IsDBNull(dr.GetOrdinal("fr")) ? null : dr.GetString("fr");
+                exam.Pulso = dr.IsDBNull(dr.GetOrdinal("pulso")) ? null : dr.GetString("pulso");
+                exam.Anisocoria = dr.IsDBNull(dr.GetOrdinal("anisocoria")) ? null : dr.GetString("anisocoria");
+                exam.Dentadura = dr.IsDBNull(dr.GetOrdinal("dentadura")) ? null : dr.GetString("dentadura");
+                exam.Mucosas = dr.IsDBNull(dr.GetOrdinal("mucosas")) ? null : dr.GetString("mucosas");
+                exam.Tonsi = dr.IsDBNull(dr.GetOrdinal("tonsi")) ? null : dr.GetString("tonsi");
+                exam.ReflTusigeno = dr.IsDBNull(dr.GetOrdinal("refl_tusigeno")) ? null : dr.GetString("refl_tusigeno");
+                exam.Tllc = dr.IsDBNull(dr.GetOrdinal("tllc")) ? null : dr.GetString("tllc");
+                exam.PlpAbdominal = dr.IsDBNull(dr.GetOrdinal("plp_Abdominal")) ? null : dr.GetString("plp_Abdominal");
+                exam.Deshidratado = dr.IsDBNull(dr.GetOrdinal("deshidratado")) ? null : dr.GetString("deshidratado");
+                exam.Palmopercusion = dr.IsDBNull(dr.GetOrdinal("palmopercusion")) ? null : dr.GetString("palmopercusion");
+                exam.Rinon = dr.IsDBNull(dr.GetOrdinal("riñon")) ? null : dr.GetString("riñon");
+                exam.Vejiga = dr.IsDBNull(dr.GetOrdinal("vejiga")) ? null : dr.GetString("vejiga");
+                exam.Dedos = dr.IsDBNull(dr.GetOrdinal("dedos")) ? null : dr.GetString("dedos");
+                exam.Higado = dr.IsDBNull(dr.GetOrdinal("higado")) ? null : dr.GetString("higado");
+                exam.Prepucio = dr.IsDBNull(dr.GetOrdinal("prepucio")) ? null : dr.GetString("prepucio");
+                exam.Intestino = dr.IsDBNull(dr.GetOrdinal("intestino")) ? null : dr.GetString("intestino");
+                exam.TestiVulva = dr.IsDBNull(dr.GetOrdinal("testi_vulva")) ? null : dr.GetString("testi_vulva");
+                exam.CondiCorporal = dr.IsDBNull(dr.GetOrdinal("condi_corporal")) ? null : dr.GetString("condi_corporal");
+                exam.OtrasObservaciones = dr.IsDBNull(dr.GetOrdinal("otras_observaciones")) ? null : dr.GetString("otras_observaciones");
+                exam.DxPresuntivo = dr.IsDBNull(dr.GetOrdinal("dx_presuntivo")) ? null : dr.GetString("dx_presuntivo");
+                exam.DxDiferencial = dr.IsDBNull(dr.GetOrdinal("dx_diferencial")) ? null : dr.GetString("dx_diferencial");
+                exam.ExamenesLab = dr.IsDBNull(dr.GetOrdinal("examenes_lab")) ? null : dr.GetString("examenes_lab");
+                exam.IdMascota = dr.GetInt32("idMascota");
+                exam.IdConsulta = dr.IsDBNull(dr.GetOrdinal("idConsulta")) ? 0 : dr.GetInt32("idConsulta");
+                Conexion.cerrarConexion();
+                return exam;
+            }
+            else
+            {
+                Conexion.cerrarConexion();
+                MessageBox.Show("Error al cargar la informacion del Examen", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return exam;
+            }
+        }
+        public int getUltimaConsulta()
+        {
+            string consulta = "SELECT MAX(idConsulta) AS ultID FROM tb_consulta";
+            Comando.Connection = Conexion.abrirConexion();
+            Comando.CommandText = consulta;
+            Object resultado = Comando.ExecuteScalar();
+            if (resultado != null)
+            {
+                return Convert.ToInt32(resultado);
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }
+

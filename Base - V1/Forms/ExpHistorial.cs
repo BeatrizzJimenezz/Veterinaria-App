@@ -45,7 +45,7 @@ namespace Base___V1
 
 
                 menu.PnlFormLoader2.Controls.Clear();
-                ExpNuevaConsulta abrirHistorial = new ExpNuevaConsulta(idDueño, idMascota, false, int.Parse(idConsulta)) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                ExpNuevaConsulta abrirHistorial = new ExpNuevaConsulta(idDueño, idMascota, false, int.Parse(idConsulta),menu) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
                 abrirHistorial.FormBorderStyle = FormBorderStyle.None;
                 menu.PnlFormLoader2.Controls.Add(abrirHistorial);
                 abrirHistorial.Show();

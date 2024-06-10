@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Base___V1.Models;
 using Base___V1.Logic;
 using System.Globalization;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Base___V1
 {
@@ -20,12 +21,14 @@ namespace Base___V1
         private QuerysSQL data;
         private bool ingreso;
         private int idConsulta;
-        public ExpNuevaConsulta(string idDueño, string idMascota, bool ingreso, int idConsulta)
+        private ExpedienteVistaPrincipal exp;
+        public ExpNuevaConsulta(string idDueño, string idMascota, bool ingreso, int idConsulta, ExpedienteVistaPrincipal exp)
         {
             this.idDueño = idDueño;
             this.idMascota = idMascota;
             this.ingreso = ingreso;
             this.idConsulta = idConsulta;
+            this.exp = exp;
             InitializeComponent();
             SetControlsEnabled(ingreso);
             data = new QuerysSQL();
@@ -44,7 +47,34 @@ namespace Base___V1
         {
             Consulta consulta = obtenerDatos();
 
-            data.InsertarConsulta(consulta);
+            if (data.InsertarConsulta(consulta))
+            {
+                DialogResult result = MessageBox.Show("¿Desea ingresar un examen fisico?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    exp.idConsulta = idConsulta;
+                    exp.PnlFormLoader2.Controls.Clear();
+                    ExpNuevoExamen abrirHistorial = new ExpNuevoExamen(int.Parse(idDueño), int.Parse(idMascota), idConsulta, true) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                    abrirHistorial.FormBorderStyle = FormBorderStyle.None;
+                    exp.PnlFormLoader2.Controls.Add(abrirHistorial);
+                    abrirHistorial.Show();
+                }else if(result == DialogResult.No)
+                {
+                    ExamenFisico exam = new ExamenFisico();
+                    exam.IdMascota = int.Parse(idMascota);
+                    exam.IdConsulta = data.getUltimaConsulta();
+                    data.insertarExamenFisico(exam);
+
+                    
+                    exp.PnlFormLoader2.Controls.Clear();
+                    ExpInfo abrirHistorial = new ExpInfo(idMascota,idDueño) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                    abrirHistorial.FormBorderStyle = FormBorderStyle.None;
+                    exp.PnlFormLoader2.Controls.Add(abrirHistorial);
+                    abrirHistorial.Show();
+                }
+            }
+
 
 
 
@@ -57,11 +87,15 @@ namespace Base___V1
         public void SetControlsEnabled(bool enabled)
         {
             btnNewConsulta.Enabled = enabled;
+            btnNewConsulta.Visible = enabled;
+            button1.Enabled = !enabled;
+            button1.Visible = !enabled;
+            cbEditar.Visible = !enabled;
             // Iterar a través de todos los controles en el formulario
             foreach (Control control in this.Controls)
             {
                 // Si el control es un TextBox o CheckBox, cambiar su propiedad Enabled
-                if (control is TextBox || control is CheckBox)
+                if (control is System.Windows.Forms.TextBox || control is CheckBox)
                 {
                     control.Enabled = enabled;
                 }
@@ -72,7 +106,7 @@ namespace Base___V1
                 {
                     foreach (Control childControl in control.Controls)
                     {
-                        if (childControl is TextBox || childControl is CheckBox)
+                        if (childControl is System.Windows.Forms.TextBox || childControl is CheckBox)
                         {
                             childControl.Enabled = enabled;
                         }
@@ -162,7 +196,8 @@ namespace Base___V1
         {
             SetControlsEnabled(cbEditar.Checked);
 
-            if (!cbEditar.Checked) {
+            if (!cbEditar.Checked)
+            {
                 Consulta cosulta = obtenerDatos();
                 cosulta.IdConsulta = idConsulta;
                 data.editarConsulta(cosulta);
@@ -250,6 +285,15 @@ namespace Base___V1
             consulta.MotivoConsulta = "Mareos";//Aqui poner el textBox para motivo de la consulta
 
             return consulta;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            exp.PnlFormLoader2.Controls.Clear();
+            ExpNuevoExamen abrirHistorial = new ExpNuevoExamen(int.Parse(idDueño), int.Parse(idMascota), idConsulta, false) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            abrirHistorial.FormBorderStyle = FormBorderStyle.None;
+            exp.PnlFormLoader2.Controls.Add(abrirHistorial);
+            abrirHistorial.Show();
         }
     }
 }

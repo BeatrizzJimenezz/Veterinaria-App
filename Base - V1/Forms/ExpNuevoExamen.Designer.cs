@@ -85,6 +85,7 @@
             textBox22 = new TextBox();
             label24 = new Label();
             panel3 = new Panel();
+            cbEditar = new CheckBox();
             btnNewExamen = new Button();
             textBox21 = new TextBox();
             label27 = new Label();
@@ -741,6 +742,7 @@
             // 
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel3.BackColor = Color.DarkCyan;
+            panel3.Controls.Add(cbEditar);
             panel3.Controls.Add(btnNewExamen);
             panel3.Controls.Add(textBox21);
             panel3.Controls.Add(label27);
@@ -749,6 +751,19 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1050, 160);
             panel3.TabIndex = 138;
+            // 
+            // cbEditar
+            // 
+            cbEditar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            cbEditar.AutoSize = true;
+            cbEditar.ForeColor = SystemColors.ButtonHighlight;
+            cbEditar.Location = new Point(712, 115);
+            cbEditar.Name = "cbEditar";
+            cbEditar.Size = new Size(142, 24);
+            cbEditar.TabIndex = 198;
+            cbEditar.Text = "Habilitar Edicion";
+            cbEditar.UseVisualStyleBackColor = true;
+            cbEditar.CheckedChanged += cbEditar_CheckedChanged;
             // 
             // btnNewExamen
             // 
@@ -764,6 +779,7 @@
             btnNewExamen.TabIndex = 197;
             btnNewExamen.Text = "Agregar Examen";
             btnNewExamen.UseVisualStyleBackColor = false;
+            btnNewExamen.Click += btnNewExamen_Click;
             // 
             // textBox21
             // 
@@ -875,5 +891,6 @@
         private TextBox textBox24;
         private TextBox textBox21;
         private Button btnNewExamen;
+        private CheckBox cbEditar;
     }
 }

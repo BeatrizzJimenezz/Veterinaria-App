@@ -69,6 +69,7 @@
             checkAcceso = new CheckBox();
             labelTenencia = new Label();
             panel3 = new Panel();
+            button1 = new Button();
             cbEditar = new CheckBox();
             btnNewConsulta = new Button();
             textBox37 = new TextBox();
@@ -653,6 +654,7 @@
             // 
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel3.BackColor = Color.DarkCyan;
+            panel3.Controls.Add(button1);
             panel3.Controls.Add(cbEditar);
             panel3.Controls.Add(btnNewConsulta);
             panel3.Controls.Add(textBox37);
@@ -754,6 +756,22 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1063, 1200);
             panel3.TabIndex = 85;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            button1.BackColor = Color.FromArgb(0, 126, 249);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Nirmala UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(25, 1158);
+            button1.Name = "button1";
+            button1.Size = new Size(160, 30);
+            button1.TabIndex = 198;
+            button1.Text = "Ver examen fisico";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // cbEditar
             // 
@@ -1983,5 +2001,6 @@
         private Label label54;
         private Button btnNewConsulta;
         private CheckBox cbEditar;
+        private Button button1;
     }
 }

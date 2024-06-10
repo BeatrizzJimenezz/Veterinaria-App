@@ -32,7 +32,6 @@
             btnHistorial = new Button();
             btnNewConsulta = new Button();
             btnVacunas = new Button();
-            btnNewExamen = new Button();
             SuspendLayout();
             // 
             // PnlFormLoader2
@@ -92,29 +91,12 @@
             btnVacunas.UseVisualStyleBackColor = false;
             btnVacunas.Click += btnVacunas_Click;
             // 
-            // btnNewExamen
-            // 
-            btnNewExamen.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnNewExamen.BackColor = Color.FromArgb(0, 126, 249);
-            btnNewExamen.FlatAppearance.BorderSize = 0;
-            btnNewExamen.FlatStyle = FlatStyle.Flat;
-            btnNewExamen.Font = new Font("Nirmala UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnNewExamen.ForeColor = Color.White;
-            btnNewExamen.Location = new Point(170, 536);
-            btnNewExamen.Name = "btnNewExamen";
-            btnNewExamen.Size = new Size(190, 30);
-            btnNewExamen.TabIndex = 12;
-            btnNewExamen.Text = "Nuevo examen fisico";
-            btnNewExamen.UseVisualStyleBackColor = false;
-            btnNewExamen.Click += btnNewExamen_Click;
-            // 
             // ExpedienteVistaPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(882, 593);
-            Controls.Add(btnNewExamen);
             Controls.Add(btnVacunas);
             Controls.Add(btnHistorial);
             Controls.Add(btnNewConsulta);
@@ -132,6 +114,5 @@
         private Button btnHistorial;
         private Button btnNewConsulta;
         private Button btnVacunas;
-        private Button btnNewExamen;
     }
 }
