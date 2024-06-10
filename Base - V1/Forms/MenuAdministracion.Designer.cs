@@ -67,6 +67,7 @@
             tblPacientes.RowHeadersWidth = 51;
             tblPacientes.Size = new Size(855, 530);
             tblPacientes.TabIndex = 0;
+            tblPacientes.CellClick += tblPacientes_CellClick;
             // 
             // btnVerPaciente
             // 

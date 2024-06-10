@@ -219,8 +219,8 @@
         private Button Btn1;
         private Panel panel2;
         private PictureBox pictureBox1;
-        private Panel PnlFormLoader;
-        private Label IblTittle;
+        public Panel PnlFormLoader;
+        public Label IblTittle;
         private TextBox textBox1;
         private Panel PanelNav;
         private Panel panel3;

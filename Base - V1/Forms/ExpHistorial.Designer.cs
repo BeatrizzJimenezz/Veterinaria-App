@@ -30,9 +30,6 @@
         {
             panel1 = new Panel();
             tblHistorialConsultas = new DataGridView();
-            ClConsulta = new DataGridViewTextBoxColumn();
-            ClFecha = new DataGridViewTextBoxColumn();
-            ClRazon = new DataGridViewTextBoxColumn();
             lblNombrePaciente = new Label();
             lblDatosPaciente = new Label();
             btnVerPaciente = new Button();
@@ -55,30 +52,12 @@
             tblHistorialConsultas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tblHistorialConsultas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             tblHistorialConsultas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tblHistorialConsultas.Columns.AddRange(new DataGridViewColumn[] { ClConsulta, ClFecha, ClRazon });
             tblHistorialConsultas.Location = new Point(0, 0);
             tblHistorialConsultas.Name = "tblHistorialConsultas";
             tblHistorialConsultas.RowHeadersWidth = 51;
             tblHistorialConsultas.Size = new Size(1092, 543);
             tblHistorialConsultas.TabIndex = 0;
-            // 
-            // ClConsulta
-            // 
-            ClConsulta.HeaderText = "Consulta";
-            ClConsulta.MinimumWidth = 6;
-            ClConsulta.Name = "ClConsulta";
-            // 
-            // ClFecha
-            // 
-            ClFecha.HeaderText = "Fecha de realizado";
-            ClFecha.MinimumWidth = 6;
-            ClFecha.Name = "ClFecha";
-            // 
-            // ClRazon
-            // 
-            ClRazon.HeaderText = "Motivo de consulta";
-            ClRazon.MinimumWidth = 6;
-            ClRazon.Name = "ClRazon";
+            tblHistorialConsultas.CellClick += tblHistorialConsultas_CellClick;
             // 
             // lblNombrePaciente
             // 
@@ -140,9 +119,6 @@
         private Label lblNombrePaciente;
         private Label lblDatosPaciente;
         private DataGridView tblHistorialConsultas;
-        private DataGridViewTextBoxColumn ClConsulta;
-        private DataGridViewTextBoxColumn ClFecha;
-        private DataGridViewTextBoxColumn ClRazon;
         private Button btnVerPaciente;
     }
 }

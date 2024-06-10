@@ -17,8 +17,9 @@ namespace Base___V1.Models
         private string color;
         private string senias;
         private int idDuenio;
+        private string fechaIngreso;
 
-        public Mascota(int idMascota, string nombre, string especie, string raza, int edad, string sexo, string color, string senias, int idDueño)
+        public Mascota(int idMascota, string nombre, string especie, string raza, int edad, string sexo, string color, string senias, int idDueño, string fechaIngreso)
         {
             this.idMascota = idMascota;
             this.nombre = nombre;
@@ -29,6 +30,7 @@ namespace Base___V1.Models
             this.color = color;
             this.senias = senias;
             this.idDuenio = idDueño;
+            this.fechaIngreso = fechaIngreso;
         }
         public Mascota() { }
         public int getIdMascota() {return this.idMascota;}
@@ -40,7 +42,7 @@ namespace Base___V1.Models
         public string getSexo() { return this.sexo;}
         public string getColor() {return this.color;}
         public int getIdDuenio() { return this.idDuenio; }
-
+        public string getFechaIngreso() {return this.fechaIngreso;}
         public void setIdMascota(int id) { this.idMascota = id;}
         public void setNombre(string nombre) { this.nombre = nombre;}
         public void setEspecie(string especie) { this.especie = especie;}
@@ -50,6 +52,7 @@ namespace Base___V1.Models
         public void setSexo(string sexo) { this.sexo = sexo;}
         public void setColor(string color) { this.color = color;}
         public void setIdDuenio(int id) {this.idDuenio = id;}
+        public void setFechaIngreso(string fecha) { this.fechaIngreso = fecha;}
 
 
     }

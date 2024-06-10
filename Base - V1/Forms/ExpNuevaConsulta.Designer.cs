@@ -69,6 +69,7 @@
             checkAcceso = new CheckBox();
             labelTenencia = new Label();
             panel3 = new Panel();
+            cbEditar = new CheckBox();
             btnNewConsulta = new Button();
             textBox37 = new TextBox();
             label52 = new Label();
@@ -652,6 +653,7 @@
             // 
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel3.BackColor = Color.DarkCyan;
+            panel3.Controls.Add(cbEditar);
             panel3.Controls.Add(btnNewConsulta);
             panel3.Controls.Add(textBox37);
             panel3.Controls.Add(label52);
@@ -753,6 +755,19 @@
             panel3.Size = new Size(1063, 1200);
             panel3.TabIndex = 85;
             // 
+            // cbEditar
+            // 
+            cbEditar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            cbEditar.AutoSize = true;
+            cbEditar.ForeColor = SystemColors.ButtonHighlight;
+            cbEditar.Location = new Point(683, 1164);
+            cbEditar.Name = "cbEditar";
+            cbEditar.Size = new Size(142, 24);
+            cbEditar.TabIndex = 197;
+            cbEditar.Text = "Habilitar Edicion";
+            cbEditar.UseVisualStyleBackColor = true;
+            cbEditar.CheckedChanged += cbEditar_CheckedChanged;
+            // 
             // btnNewConsulta
             // 
             btnNewConsulta.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
@@ -767,11 +782,11 @@
             btnNewConsulta.TabIndex = 196;
             btnNewConsulta.Text = "Agregar consulta";
             btnNewConsulta.UseVisualStyleBackColor = false;
+            btnNewConsulta.Click += btnNewConsulta_Click;
             // 
             // textBox37
             // 
             textBox37.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            textBox37.Enabled = false;
             textBox37.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox37.Location = new Point(811, 1111);
             textBox37.Name = "textBox37";
@@ -793,7 +808,6 @@
             // textBox38
             // 
             textBox38.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox38.Enabled = false;
             textBox38.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox38.Location = new Point(494, 1111);
             textBox38.Name = "textBox38";
@@ -815,7 +829,6 @@
             // textBox39
             // 
             textBox39.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            textBox39.Enabled = false;
             textBox39.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox39.Location = new Point(140, 1111);
             textBox39.Name = "textBox39";
@@ -879,7 +892,6 @@
             // textBox34
             // 
             textBox34.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            textBox34.Enabled = false;
             textBox34.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox34.Location = new Point(861, 1069);
             textBox34.Name = "textBox34";
@@ -921,7 +933,6 @@
             // textBox25
             // 
             textBox25.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            textBox25.Enabled = false;
             textBox25.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox25.Location = new Point(607, 1069);
             textBox25.Name = "textBox25";
@@ -943,7 +954,6 @@
             // textBox28
             // 
             textBox28.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            textBox28.Enabled = false;
             textBox28.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox28.Location = new Point(359, 1069);
             textBox28.Name = "textBox28";
@@ -965,7 +975,6 @@
             // textBox29
             // 
             textBox29.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox29.Enabled = false;
             textBox29.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox29.Location = new Point(140, 1069);
             textBox29.Name = "textBox29";
@@ -1002,7 +1011,6 @@
             // textBox30
             // 
             textBox30.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox30.Enabled = false;
             textBox30.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox30.Location = new Point(646, 988);
             textBox30.Name = "textBox30";
@@ -1091,7 +1099,6 @@
             // textBox23
             // 
             textBox23.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox23.Enabled = false;
             textBox23.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox23.Location = new Point(861, 818);
             textBox23.Name = "textBox23";
@@ -1113,7 +1120,6 @@
             // textBox20
             // 
             textBox20.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            textBox20.Enabled = false;
             textBox20.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox20.Location = new Point(446, 818);
             textBox20.Name = "textBox20";
@@ -1135,7 +1141,6 @@
             // textBox22
             // 
             textBox22.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            textBox22.Enabled = false;
             textBox22.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox22.Location = new Point(156, 817);
             textBox22.Name = "textBox22";
@@ -1172,7 +1177,6 @@
             // textBox24
             // 
             textBox24.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox24.Enabled = false;
             textBox24.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox24.Location = new Point(667, 777);
             textBox24.Name = "textBox24";
@@ -1305,7 +1309,7 @@
             // 
             textBox21.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox21.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox21.Location = new Point(238, 612);
+            textBox21.Location = new Point(245, 612);
             textBox21.Name = "textBox21";
             textBox21.Size = new Size(773, 30);
             textBox21.TabIndex = 140;
@@ -1341,6 +1345,7 @@
             textBox17.Name = "textBox17";
             textBox17.Size = new Size(250, 30);
             textBox17.TabIndex = 137;
+            textBox17.TextChanged += textBox17_TextChanged;
             // 
             // label29
             // 
@@ -1497,7 +1502,6 @@
             // textBox12
             // 
             textBox12.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox12.Enabled = false;
             textBox12.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox12.Location = new Point(861, 353);
             textBox12.Name = "textBox12";
@@ -1519,7 +1523,6 @@
             // textBox10
             // 
             textBox10.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            textBox10.Enabled = false;
             textBox10.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox10.Location = new Point(602, 352);
             textBox10.Name = "textBox10";
@@ -1556,7 +1559,6 @@
             // textBox11
             // 
             textBox11.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            textBox11.Enabled = false;
             textBox11.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox11.Location = new Point(238, 352);
             textBox11.Name = "textBox11";
@@ -1578,7 +1580,6 @@
             // textBox7
             // 
             textBox7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            textBox7.Enabled = false;
             textBox7.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox7.Location = new Point(667, 307);
             textBox7.Name = "textBox7";
@@ -1615,7 +1616,6 @@
             // textBox5
             // 
             textBox5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox5.Enabled = false;
             textBox5.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox5.Location = new Point(238, 309);
             textBox5.Name = "textBox5";
@@ -1827,7 +1827,7 @@
             Controls.Add(lblNombrePaciente);
             Controls.Add(lblDatosPaciente);
             FormBorderStyle = FormBorderStyle.None;
-            MinimumSize = new Size(1155, 678);
+            MinimumSize = new Size(882, 593);
             Name = "ExpNuevaConsulta";
             Text = "ExpNuevaConsulta";
             panel1.ResumeLayout(false);
@@ -1982,5 +1982,6 @@
         private TextBox textBox39;
         private Label label54;
         private Button btnNewConsulta;
+        private CheckBox cbEditar;
     }
 }

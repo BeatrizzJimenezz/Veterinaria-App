@@ -12,21 +12,26 @@ namespace Base___V1
 {
     public partial class ExpedienteVistaPrincipal : Form
     {
-        public ExpedienteVistaPrincipal()
+        private string idDueño;
+        private string idMascota;
+        public ExpedienteVistaPrincipal(string idMascota, string idDueño)
         {
+            this.idMascota = idMascota;
+            this.idDueño = idDueño;
             InitializeComponent();
 
             this.PnlFormLoader2.Controls.Clear();
-            ExpInfo infoGeneral = new ExpInfo() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            ExpInfo infoGeneral = new ExpInfo(idMascota,idDueño) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             infoGeneral.FormBorderStyle = FormBorderStyle.None;
             this.PnlFormLoader2.Controls.Add(infoGeneral);
             infoGeneral.Show();
+            
         }
 
         private void btnHistorial_Click(object sender, EventArgs e)
         {
             this.PnlFormLoader2.Controls.Clear();
-            ExpHistorial abrirHistorial = new ExpHistorial() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            ExpHistorial abrirHistorial = new ExpHistorial(idDueño,idMascota,this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             abrirHistorial.FormBorderStyle = FormBorderStyle.None;
             this.PnlFormLoader2.Controls.Add(abrirHistorial);
             abrirHistorial.Show();
@@ -35,7 +40,7 @@ namespace Base___V1
         private void btnNewConsulta_Click(object sender, EventArgs e)
         {
             this.PnlFormLoader2.Controls.Clear();
-            ExpNuevaConsulta agregarConsulta = new ExpNuevaConsulta() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            ExpNuevaConsulta agregarConsulta = new ExpNuevaConsulta(idDueño, idMascota, true,0) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             agregarConsulta.FormBorderStyle = FormBorderStyle.None;
             this.PnlFormLoader2.Controls.Add(agregarConsulta);
             agregarConsulta.Show();

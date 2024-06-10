@@ -41,7 +41,7 @@
             PnlFormLoader2.BackColor = Color.FromArgb(32, 42, 64);
             PnlFormLoader2.Location = new Point(12, 12);
             PnlFormLoader2.Name = "PnlFormLoader2";
-            PnlFormLoader2.Size = new Size(1155, 678);
+            PnlFormLoader2.Size = new Size(855, 518);
             PnlFormLoader2.TabIndex = 0;
             // 
             // btnHistorial
@@ -52,7 +52,7 @@
             btnHistorial.FlatStyle = FlatStyle.Flat;
             btnHistorial.Font = new Font("Nirmala UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnHistorial.ForeColor = Color.White;
-            btnHistorial.Location = new Point(798, 696);
+            btnHistorial.Location = new Point(498, 536);
             btnHistorial.Name = "btnHistorial";
             btnHistorial.Size = new Size(192, 30);
             btnHistorial.TabIndex = 10;
@@ -68,7 +68,7 @@
             btnNewConsulta.FlatStyle = FlatStyle.Flat;
             btnNewConsulta.Font = new Font("Nirmala UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnNewConsulta.ForeColor = Color.White;
-            btnNewConsulta.Location = new Point(12, 696);
+            btnNewConsulta.Location = new Point(12, 536);
             btnNewConsulta.Name = "btnNewConsulta";
             btnNewConsulta.Size = new Size(152, 30);
             btnNewConsulta.TabIndex = 9;
@@ -84,7 +84,7 @@
             btnVacunas.FlatStyle = FlatStyle.Flat;
             btnVacunas.Font = new Font("Nirmala UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVacunas.ForeColor = Color.White;
-            btnVacunas.Location = new Point(996, 696);
+            btnVacunas.Location = new Point(696, 536);
             btnVacunas.Name = "btnVacunas";
             btnVacunas.Size = new Size(170, 30);
             btnVacunas.TabIndex = 11;
@@ -100,7 +100,7 @@
             btnNewExamen.FlatStyle = FlatStyle.Flat;
             btnNewExamen.Font = new Font("Nirmala UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnNewExamen.ForeColor = Color.White;
-            btnNewExamen.Location = new Point(170, 696);
+            btnNewExamen.Location = new Point(170, 536);
             btnNewExamen.Name = "btnNewExamen";
             btnNewExamen.Size = new Size(190, 30);
             btnNewExamen.TabIndex = 12;
@@ -113,13 +113,14 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
-            ClientSize = new Size(1182, 753);
+            ClientSize = new Size(882, 593);
             Controls.Add(btnNewExamen);
             Controls.Add(btnVacunas);
             Controls.Add(btnHistorial);
             Controls.Add(btnNewConsulta);
             Controls.Add(PnlFormLoader2);
-            MinimumSize = new Size(1200, 800);
+            FormBorderStyle = FormBorderStyle.None;
+            MinimumSize = new Size(882, 593);
             Name = "ExpedienteVistaPrincipal";
             Text = "Expediente";
             ResumeLayout(false);
@@ -127,7 +128,7 @@
 
         #endregion
 
-        private Panel PnlFormLoader2;
+        public Panel PnlFormLoader2;
         private Button btnHistorial;
         private Button btnNewConsulta;
         private Button btnVacunas;

@@ -17,9 +17,11 @@ namespace Base___V1
     {
         public Button prueba;
         private QuerysSQL datos = new QuerysSQL();
+        private Menu menu;
 
-        public MenuAdministracion()
+        public MenuAdministracion(Menu menu)
         {
+            this.menu = menu;
             InitializeComponent();
             datos.ListarInformacion(tblPacientes);
         }
@@ -31,8 +33,25 @@ namespace Base___V1
 
         private void btnVerPaciente_Click(object sender, EventArgs e)
         {
-            ExpedienteVistaPrincipal ver = new ExpedienteVistaPrincipal();
+            ExpedienteVistaPrincipal ver = new ExpedienteVistaPrincipal("0","0");
             ver.Show();
+        }
+
+        private void tblPacientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+            {
+                DataGridViewRow filaSeleccionada = tblPacientes.Rows[e.RowIndex];
+                string idDueño = filaSeleccionada.Cells["DueñoID"].Value.ToString();
+                string idMascota = filaSeleccionada.Cells["MascotaID"].Value.ToString();
+
+                
+                menu.PnlFormLoader.Controls.Clear();
+                ExpedienteVistaPrincipal pantalla2_vrb = new ExpedienteVistaPrincipal(idMascota,idDueño) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                pantalla2_vrb.FormBorderStyle = FormBorderStyle.None;
+                menu.PnlFormLoader.Controls.Add(pantalla2_vrb);
+                pantalla2_vrb.Show();
+            }
         }
     }
 }

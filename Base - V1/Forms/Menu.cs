@@ -25,7 +25,7 @@ namespace Base___V1
 
             IblTittle.Text = "Administración";
             this.PnlFormLoader.Controls.Clear();
-            MenuAdministracion pantalla2_vrb = new MenuAdministracion() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            MenuAdministracion pantalla2_vrb = new MenuAdministracion(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             pantalla2_vrb.FormBorderStyle = FormBorderStyle.None;
             this.PnlFormLoader.Controls.Add(pantalla2_vrb);
             pantalla2_vrb.Show();
@@ -45,7 +45,7 @@ namespace Base___V1
 
             IblTittle.Text = "Administración";
             this.PnlFormLoader.Controls.Clear();
-            MenuAdministracion pantalla2_vrb = new MenuAdministracion() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            MenuAdministracion pantalla2_vrb = new MenuAdministracion(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             pantalla2_vrb.FormBorderStyle = FormBorderStyle.None;
             this.PnlFormLoader.Controls.Add(pantalla2_vrb);
             pantalla2_vrb.Show();
