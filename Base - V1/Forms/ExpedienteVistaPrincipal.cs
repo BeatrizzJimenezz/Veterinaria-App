@@ -61,7 +61,7 @@ namespace Base___V1
         private void btnVacunas_Click(object sender, EventArgs e)
         {
             this.PnlFormLoader2.Controls.Clear();
-            ExpVacunas controlarVacunas = new ExpVacunas() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            ExpVacunas controlarVacunas = new ExpVacunas(int.Parse(idMascota)) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             controlarVacunas.FormBorderStyle = FormBorderStyle.None;
             this.PnlFormLoader2.Controls.Add(controlarVacunas);
             controlarVacunas.Show();

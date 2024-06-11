@@ -40,6 +40,10 @@ namespace Base___V1
             {
                 cargarDatos(idConsulta);
             }
+            btnNewConsulta.Visible = ingreso;
+            button1.Enabled = !ingreso;
+            button1.Visible = !ingreso;
+            cbEditar.Visible = !ingreso;
 
         }
 
@@ -86,11 +90,6 @@ namespace Base___V1
         }
         public void SetControlsEnabled(bool enabled)
         {
-            btnNewConsulta.Enabled = enabled;
-            btnNewConsulta.Visible = enabled;
-            button1.Enabled = !enabled;
-            button1.Visible = !enabled;
-            cbEditar.Visible = !enabled;
             // Iterar a través de todos los controles en el formulario
             foreach (Control control in this.Controls)
             {

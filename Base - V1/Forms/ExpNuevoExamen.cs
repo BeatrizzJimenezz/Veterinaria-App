@@ -29,6 +29,7 @@ namespace Base___V1
             Mascota m = new Mascota();
             m = data.getMascota(idMascota);
             lblNombrePaciente.Text = m.getNombre();
+            btnNewExamen.Enabled = enable;
             if (!enable)
             {
                 cargarDatos(idConsulta);
@@ -81,7 +82,6 @@ namespace Base___V1
 
         public void SetControlsEnabled(bool enabled)
         {
-            btnNewExamen.Enabled = enabled;
             // Iterar a través de todos los controles en el formulario
             foreach (Control control in this.Controls)
             {
@@ -146,7 +146,6 @@ namespace Base___V1
         private void cbEditar_CheckedChanged(object sender, EventArgs e)
         {
             SetControlsEnabled(cbEditar.Checked);
-            btnNewExamen.Enabled = !cbEditar.Checked;
             if (!cbEditar.Checked)
             {
                 ExamenFisico exam = obtenerDatos();

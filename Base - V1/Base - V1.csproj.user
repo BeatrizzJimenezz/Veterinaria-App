@@ -28,6 +28,9 @@
     <Compile Update="Forms\ExpedienteVistaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\VacunaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="WidgetVacuna.cs">
       <SubType>UserControl</SubType>
     </Compile>

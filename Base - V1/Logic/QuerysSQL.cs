@@ -97,14 +97,14 @@ namespace Base___V1.Logic
             DataTable dtDatos = new DataTable();
 
             // Establecer una conexión y ejecutar la consulta
-                using (MySqlCommand comando = new MySqlCommand(consulta, Conexion.abrirConexion()))
-                {
-                    Conexion.abrirConexion();
+            using (MySqlCommand comando = new MySqlCommand(consulta, Conexion.abrirConexion()))
+            {
+                Conexion.abrirConexion();
 
-                    // Crear un SqlDataAdapter para ejecutar la consulta y llenar el DataTable con los resultados
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(comando);
-                    adapter.Fill(dtDatos);
-                }
+                // Crear un SqlDataAdapter para ejecutar la consulta y llenar el DataTable con los resultados
+                MySqlDataAdapter adapter = new MySqlDataAdapter(comando);
+                adapter.Fill(dtDatos);
+            }
 
 
 
@@ -156,7 +156,7 @@ namespace Base___V1.Logic
             Comando.CommandType = CommandType.Text;
             MySqlDataReader dr = Comando.ExecuteReader();
 
-            if (dr.Read()) { 
+            if (dr.Read()) {
                 d.setIdDueno(id);
                 d.setNombre(dr["nombre"].ToString());
                 d.setDireccion(dr["direccion"].ToString());
@@ -165,12 +165,12 @@ namespace Base___V1.Logic
 
                 Conexion.cerrarConexion();
 
-                return d;  
-            
+                return d;
+
             }
             else
             {
-                MessageBox.Show("Error al cargar la informacion del dueño","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Error al cargar la informacion del dueño", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Conexion.cerrarConexion();
                 return d;
             }
@@ -190,13 +190,13 @@ namespace Base___V1.Logic
             }
             catch (Exception ex) {
                 Console.WriteLine(ex.Message);
-                MessageBox.Show("Error al editar los datos del paciente. Error: "+ ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al editar los datos del paciente. Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
                 Conexion.cerrarConexion();
             }
-            
+
         }
         public void editarDueño(Dueño d)
         {
@@ -212,7 +212,7 @@ namespace Base___V1.Logic
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                MessageBox.Show("Error al editar los datos del dueño. Error: "+ ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al editar los datos del dueño. Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             finally
@@ -258,7 +258,7 @@ namespace Base___V1.Logic
                 @snSeRasca, @snMalOlor, @snEscucha, @snParasitos, @snDescarga, @snAfectado, @idMascota, 
                 @fecha_realizado, @motivo_consulta
             );
-        "; 
+        ";
             Comando.Parameters.AddWithValue("@in_vacunas", (object)consulta.InVacunas ?? (object)DBNull.Value);
             Comando.Parameters.AddWithValue("@in_quintuple", (object)consulta.InQuintuple ?? (object)DBNull.Value);
             Comando.Parameters.AddWithValue("@in_tripleFelina", (object)consulta.InTripleFelina ?? (object)DBNull.Value);
@@ -362,14 +362,14 @@ namespace Base___V1.Logic
             DataTable dtDatos = new DataTable();
 
             // Establecer una conexión y ejecutar la consulta
-                using (MySqlCommand comando = new MySqlCommand(consulta, Conexion.abrirConexion()))
-                {
-                    Conexion.abrirConexion();
+            using (MySqlCommand comando = new MySqlCommand(consulta, Conexion.abrirConexion()))
+            {
+                Conexion.abrirConexion();
 
-                    // Crear un SqlDataAdapter para ejecutar la consulta y llenar el DataTable con los resultados
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(comando);
-                    adapter.Fill(dtDatos);
-                }
+                // Crear un SqlDataAdapter para ejecutar la consulta y llenar el DataTable con los resultados
+                MySqlDataAdapter adapter = new MySqlDataAdapter(comando);
+                adapter.Fill(dtDatos);
+            }
 
 
 
@@ -382,7 +382,7 @@ namespace Base___V1.Logic
             return dataGridView;
         }
 
-        public Consulta getConsulta(int id) { 
+        public Consulta getConsulta(int id) {
             Consulta consulta = new Consulta();
             Comando.Connection = Conexion.abrirConexion();
             Comando.CommandText = $"SELECT * FROM tb_consulta WHERE idConsulta = {id}";
@@ -475,7 +475,7 @@ namespace Base___V1.Logic
                 Conexion.cerrarConexion();
                 MessageBox.Show("Error al cargar la informacion de la consulta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return consulta;
-            }    
+            }
         }
         public void editarConsulta(Consulta consulta)
         {
@@ -741,7 +741,7 @@ namespace Base___V1.Logic
 
         public DataGridView ListarBusquedaPaciente(DataGridView dataGridView, string busqueda)
         {
-            if(busqueda != "Busca algo...")
+            if (busqueda != "Busca algo...")
             {
                 // Consulta SQL para obtener los datos requeridos de ambas tablas
                 string consulta = $@"SELECT d.idDueño AS DueñoID, d.nombre AS Responsable,
@@ -778,7 +778,7 @@ namespace Base___V1.Logic
         }
         public DataGridView ListarConsultasBusqueda(DataGridView dataGridView, int id, string busqueda)
         {
-            if(busqueda != "Busca algo...")
+            if (busqueda != "Busca algo...")
             {
                 // Consulta SQL para obtener los datos requeridos de ambas tablas
                 string consulta = $@"SELECT idConsulta AS ConsultaID, fecha_realizado AS Fecha_Realizado, 
@@ -810,6 +810,76 @@ namespace Base___V1.Logic
             }
             return dataGridView;
         }
+        public bool ingresarVacuna(Vacunas vacuna)
+        {
+
+            Comando.Connection = Conexion.abrirConexion();
+            Comando.CommandText = "INSERT INTO tb_vacunas (nombre, fechaUltAplicacion, fechaProxAplicacion, nombre_doctor, idMascota) VALUES (@Nombre, @FechaUltAplicacion, @FechaProxAplicacion, @NombreDoctor, @IdMascota)";
+            Comando.Parameters.AddWithValue("@Nombre", vacuna.Nombre);
+            Comando.Parameters.AddWithValue("@FechaUltAplicacion", vacuna.FechaUltAplicacion);
+            Comando.Parameters.AddWithValue("@FechaProxAplicacion", vacuna.FechaProxAplicacion);
+            Comando.Parameters.AddWithValue("@NombreDoctor", vacuna.NombreDoctor);
+            Comando.Parameters.AddWithValue("@IdMascota", vacuna.IdMascota);
+
+            try
+            {
+                Comando.ExecuteNonQuery();
+                MessageBox.Show("Vacuna ingresada de manera exitosa", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al insertar la vacuna " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            finally
+            {
+                Conexion.cerrarConexion();
+            }
+        }
+
+        public List<Vacunas> obtenerVacunas(int idMascota)
+        {
+            List<Vacunas> vac = new List<Vacunas>();
+
+            try
+            {
+                Comando.Connection = Conexion.abrirConexion();
+                Comando.CommandText = $"SELECT * FROM tb_vacunas WHERE idMascota = {idMascota}";
+                Comando.CommandType = CommandType.Text;
+                var dr = Comando.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    Vacunas vacuna = new Vacunas
+                    {
+                        IdVacuna = dr.GetInt32("idVacuna"),
+                        Nombre = dr.GetString("nombre"),
+                        FechaUltAplicacion = dr.GetString("fechaUltAplicacion"),
+                        FechaProxAplicacion = dr.GetString("fechaProxAplicacion"),
+                        NombreDoctor = dr.GetString("nombre_doctor"),
+                        IdMascota = dr.GetInt32("idMascota")
+                    };
+
+                    vac.Add(vacuna);
+                }
+
+                // Ordenar la lista por la fecha de próxima aplicación más cercana a la fecha actual
+                vac = vac.OrderBy(v => DateTime.ParseExact(v.FechaProxAplicacion, "dd/MM/yyyy", null)).ToList();
+
+                return vac;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error al obtener las vacunas " + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return vac;
+            }
+            finally
+            {
+                Conexion.cerrarConexion();
+            }
+        }
     }
-}
+}   
+
 
