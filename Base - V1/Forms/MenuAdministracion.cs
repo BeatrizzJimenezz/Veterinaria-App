@@ -24,16 +24,12 @@ namespace Base___V1
             this.menu = menu;
             InitializeComponent();
             datos.ListarInformacion(tblPacientes);
-        }
-
-        private void btnAgregarPaciente_Click(object sender, EventArgs e)
-        {
-
+            menu.textBox1.TextChanged += txtBusquedaPaciente;
         }
 
         private void btnVerPaciente_Click(object sender, EventArgs e)
         {
-            ExpedienteVistaPrincipal ver = new ExpedienteVistaPrincipal("0","0");
+            ExpedienteVistaPrincipal ver = new ExpedienteVistaPrincipal("0","0",menu);
             ver.Show();
         }
 
@@ -47,11 +43,29 @@ namespace Base___V1
 
                 
                 menu.PnlFormLoader.Controls.Clear();
-                ExpedienteVistaPrincipal pantalla2_vrb = new ExpedienteVistaPrincipal(idMascota,idDueño) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                menu.textBox1.TextChanged -= txtBusquedaPaciente;
+                menu.textBox1.Text = "";
+                menu.SetPlaceholder(menu.textBox1, "Busca algo...");
+                ExpedienteVistaPrincipal pantalla2_vrb = new ExpedienteVistaPrincipal(idMascota,idDueño,menu) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
                 pantalla2_vrb.FormBorderStyle = FormBorderStyle.None;
                 menu.PnlFormLoader.Controls.Add(pantalla2_vrb);
                 pantalla2_vrb.Show();
             }
         }
+
+        private void txtBusquedaPaciente(object sender, EventArgs e)
+        {
+            
+            if(menu.textBox1.Text != "" || menu.textBox1.Text != "Busca algo...")
+            {
+                datos.ListarBusquedaPaciente(tblPacientes, menu.textBox1.Text);
+            }
+            else
+            {
+                datos.ListarInformacion(tblPacientes);
+            }
+
+        }
+
     }
 }

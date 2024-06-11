@@ -15,14 +15,16 @@ namespace Base___V1
         private string idDueño;
         private string idMascota;
         public int idConsulta;
-        public ExpedienteVistaPrincipal(string idMascota, string idDueño)
+        private Menu menu;
+        public ExpedienteVistaPrincipal(string idMascota, string idDueño, Menu menu)
         {
             this.idMascota = idMascota;
             this.idDueño = idDueño;
+            this.menu = menu;
             InitializeComponent();
 
             this.PnlFormLoader2.Controls.Clear();
-            ExpInfo infoGeneral = new ExpInfo(idMascota,idDueño) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            ExpInfo infoGeneral = new ExpInfo(idMascota, idDueño) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             infoGeneral.FormBorderStyle = FormBorderStyle.None;
             this.PnlFormLoader2.Controls.Add(infoGeneral);
             infoGeneral.Show();
@@ -32,7 +34,7 @@ namespace Base___V1
         private void btnHistorial_Click(object sender, EventArgs e)
         {
             this.PnlFormLoader2.Controls.Clear();
-            ExpHistorial abrirHistorial = new ExpHistorial(idDueño,idMascota,this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            ExpHistorial abrirHistorial = new ExpHistorial(idDueño,idMascota,this,menu) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             abrirHistorial.FormBorderStyle = FormBorderStyle.None;
             this.PnlFormLoader2.Controls.Add(abrirHistorial);
             abrirHistorial.Show();

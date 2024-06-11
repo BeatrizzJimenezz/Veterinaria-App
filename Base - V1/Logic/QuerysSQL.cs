@@ -97,9 +97,7 @@ namespace Base___V1.Logic
             DataTable dtDatos = new DataTable();
 
             // Establecer una conexión y ejecutar la consulta
-            using (Conexion.getConexion())
-            {
-                using (MySqlCommand comando = new MySqlCommand(consulta, Conexion.getConexion()))
+                using (MySqlCommand comando = new MySqlCommand(consulta, Conexion.abrirConexion()))
                 {
                     Conexion.abrirConexion();
 
@@ -107,7 +105,6 @@ namespace Base___V1.Logic
                     MySqlDataAdapter adapter = new MySqlDataAdapter(comando);
                     adapter.Fill(dtDatos);
                 }
-            }
 
 
 
@@ -365,9 +362,7 @@ namespace Base___V1.Logic
             DataTable dtDatos = new DataTable();
 
             // Establecer una conexión y ejecutar la consulta
-            using (Conexion.getConexion())
-            {
-                using (MySqlCommand comando = new MySqlCommand(consulta, Conexion.getConexion()))
+                using (MySqlCommand comando = new MySqlCommand(consulta, Conexion.abrirConexion()))
                 {
                     Conexion.abrirConexion();
 
@@ -375,7 +370,6 @@ namespace Base___V1.Logic
                     MySqlDataAdapter adapter = new MySqlDataAdapter(comando);
                     adapter.Fill(dtDatos);
                 }
-            }
 
 
 
@@ -743,6 +737,78 @@ namespace Base___V1.Logic
             {
                 return 0;
             }
+        }
+
+        public DataGridView ListarBusquedaPaciente(DataGridView dataGridView, string busqueda)
+        {
+            if(busqueda != "Busca algo...")
+            {
+                // Consulta SQL para obtener los datos requeridos de ambas tablas
+                string consulta = $@"SELECT d.idDueño AS DueñoID, d.nombre AS Responsable,
+                                  m.idMascota AS MascotaID, m.nombre AS Paciente,
+                                  m.fecha_ingreso AS Fecha_Ingreso
+                            FROM tb_dueño d
+                            INNER JOIN tb_mascota m ON d.idDueño = m.idDueño 
+                            WHERE d.nombre LIKE '%{busqueda}%' OR m.nombre LIKE '%{busqueda}%'; ";
+
+                // Crear un objeto DataTable para almacenar los datos
+                DataTable dtDatos = new DataTable();
+
+                // Establecer una conexión y ejecutar la consulta
+                using (MySqlCommand comando = new MySqlCommand(consulta, Conexion.abrirConexion()))
+                {
+
+                    // Crear un SqlDataAdapter para ejecutar la consulta y llenar el DataTable con los resultados
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(comando);
+                    adapter.Fill(dtDatos);
+                }
+
+
+
+
+                // Llenar el DataGridView con los datos del DataTable
+                dataGridView.DataSource = dtDatos;
+                dataGridView.Columns["DueñoID"].Visible = false;
+                dataGridView.Columns["MascotaID"].Visible = false;
+                Conexion.cerrarConexion();
+                // Devolver el DataGridView actualizado
+                return dataGridView;
+            }
+            return dataGridView;
+        }
+        public DataGridView ListarConsultasBusqueda(DataGridView dataGridView, int id, string busqueda)
+        {
+            if(busqueda != "Busca algo...")
+            {
+                // Consulta SQL para obtener los datos requeridos de ambas tablas
+                string consulta = $@"SELECT idConsulta AS ConsultaID, fecha_realizado AS Fecha_Realizado, 
+                                motivo_consulta AS Motivo_Consulta FROM tb_consulta WHERE idMascota = {id} 
+                                AND Fecha_Realizado LIKE '%{busqueda}%' OR Motivo_Consulta LIKE '%{busqueda}%'";
+
+                // Crear un objeto DataTable para almacenar los datos
+                DataTable dtDatos = new DataTable();
+
+                // Establecer una conexión y ejecutar la consulta
+                using (MySqlCommand comando = new MySqlCommand(consulta, Conexion.abrirConexion()))
+                {
+                    Conexion.abrirConexion();
+
+                    // Crear un SqlDataAdapter para ejecutar la consulta y llenar el DataTable con los resultados
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(comando);
+                    adapter.Fill(dtDatos);
+                }
+
+
+
+                // Llenar el DataGridView con los datos del DataTable
+                dataGridView.DataSource = dtDatos;
+                dataGridView.Columns["ConsultaID"].Visible = false;
+                Conexion.cerrarConexion();
+
+                // Devolver el DataGridView actualizado
+                return dataGridView;
+            }
+            return dataGridView;
         }
     }
 }

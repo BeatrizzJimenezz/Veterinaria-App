@@ -21,7 +21,8 @@ namespace Base___V1
             PanelNav.Height = Btn1.Height;
             PanelNav.Top = Btn1.Top;
             PanelNav.Left = Btn1.Left;
-           
+            SetPlaceholder(textBox1, "Busca algo...");
+
 
             IblTittle.Text = "Administración";
             this.PnlFormLoader.Controls.Clear();
@@ -92,6 +93,32 @@ namespace Base___V1
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+        public void SetPlaceholder(TextBox textBox, string placeholder)
+        {
+            textBox.Text = placeholder;
+            textBox.ForeColor = Color.Gray;
+
+            textBox.GotFocus += (sender, e) => RemovePlaceholder(textBox, placeholder);
+            textBox.LostFocus += (sender, e) => AddPlaceholder(textBox, placeholder);
+        }
+
+        private void RemovePlaceholder(TextBox textBox, string placeholder)
+        {
+            if (textBox.Text == placeholder)
+            {
+                textBox.Text = "";
+                textBox.ForeColor = Color.White;
+            }
+        }
+
+        private void AddPlaceholder(TextBox textBox, string placeholder)
+        {
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                textBox.Text = placeholder;
+                textBox.ForeColor = Color.Gray;
+            }
         }
     }
 }

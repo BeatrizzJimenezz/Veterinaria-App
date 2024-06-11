@@ -177,7 +177,6 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(855, 32);
             textBox1.TabIndex = 8;
-            textBox1.Text = "Buscar algo...";
             // 
             // panel3
             // 
@@ -221,7 +220,7 @@
         private PictureBox pictureBox1;
         public Panel PnlFormLoader;
         public Label IblTittle;
-        private TextBox textBox1;
+        public TextBox textBox1;
         private Panel PanelNav;
         private Panel panel3;
     }
