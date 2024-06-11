@@ -31,7 +31,6 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel3 = new Panel();
             tblPacientes = new DataGridView();
-            btnVerPaciente = new Button();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tblPacientes).BeginInit();
             SuspendLayout();
@@ -41,9 +40,9 @@
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel3.BackColor = Color.FromArgb(32, 42, 64);
             panel3.Controls.Add(tblPacientes);
-            panel3.Location = new Point(12, 0);
+            panel3.Location = new Point(12, 12);
             panel3.Name = "panel3";
-            panel3.Size = new Size(855, 530);
+            panel3.Size = new Size(855, 560);
             panel3.TabIndex = 6;
             // 
             // tblPacientes
@@ -65,25 +64,9 @@
             tblPacientes.Location = new Point(0, 0);
             tblPacientes.Name = "tblPacientes";
             tblPacientes.RowHeadersWidth = 51;
-            tblPacientes.Size = new Size(855, 530);
+            tblPacientes.Size = new Size(855, 560);
             tblPacientes.TabIndex = 0;
             tblPacientes.CellClick += tblPacientes_CellClick;
-            // 
-            // btnVerPaciente
-            // 
-            btnVerPaciente.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnVerPaciente.BackColor = Color.FromArgb(0, 126, 249);
-            btnVerPaciente.FlatAppearance.BorderSize = 0;
-            btnVerPaciente.FlatStyle = FlatStyle.Flat;
-            btnVerPaciente.Font = new Font("Nirmala UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnVerPaciente.ForeColor = Color.White;
-            btnVerPaciente.Location = new Point(767, 551);
-            btnVerPaciente.Name = "btnVerPaciente";
-            btnVerPaciente.Size = new Size(100, 30);
-            btnVerPaciente.TabIndex = 7;
-            btnVerPaciente.Text = "Ver\r\n";
-            btnVerPaciente.UseVisualStyleBackColor = false;
-            btnVerPaciente.Click += btnVerPaciente_Click;
             // 
             // MenuAdministracion
             // 
@@ -92,7 +75,6 @@
             AutoSize = true;
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(882, 593);
-            Controls.Add(btnVerPaciente);
             Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.None;
             MinimumSize = new Size(882, 593);
@@ -106,7 +88,6 @@
         #endregion
 
         private Panel panel3;
-        private Button btnVerPaciente;
         private DataGridView tblPacientes;
     }
 }

@@ -44,7 +44,7 @@
             panel1.Controls.Add(tblHistorialConsultas);
             panel1.Location = new Point(24, 65);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1092, 543);
+            panel1.Size = new Size(797, 458);
             panel1.TabIndex = 0;
             // 
             // tblHistorialConsultas
@@ -55,7 +55,7 @@
             tblHistorialConsultas.Location = new Point(0, 0);
             tblHistorialConsultas.Name = "tblHistorialConsultas";
             tblHistorialConsultas.RowHeadersWidth = 51;
-            tblHistorialConsultas.Size = new Size(1092, 543);
+            tblHistorialConsultas.Size = new Size(797, 458);
             tblHistorialConsultas.TabIndex = 0;
             tblHistorialConsultas.CellClick += tblHistorialConsultas_CellClick;
             // 
@@ -87,7 +87,7 @@
             btnVerPaciente.FlatStyle = FlatStyle.Flat;
             btnVerPaciente.Font = new Font("Nirmala UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVerPaciente.ForeColor = Color.White;
-            btnVerPaciente.Location = new Point(1016, 614);
+            btnVerPaciente.Location = new Point(721, 529);
             btnVerPaciente.Name = "btnVerPaciente";
             btnVerPaciente.Size = new Size(100, 30);
             btnVerPaciente.TabIndex = 68;
@@ -99,13 +99,13 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(32, 42, 64);
-            ClientSize = new Size(1155, 678);
+            ClientSize = new Size(860, 593);
             Controls.Add(btnVerPaciente);
             Controls.Add(lblNombrePaciente);
             Controls.Add(lblDatosPaciente);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            MinimumSize = new Size(1155, 678);
+            MinimumSize = new Size(860, 593);
             Name = "ExpHistorial";
             Text = "ExpHistorial";
             panel1.ResumeLayout(false);

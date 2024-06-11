@@ -57,7 +57,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(300, 753);
+            panel1.Size = new Size(300, 853);
             panel1.TabIndex = 1;
             // 
             // PanelNav
@@ -77,7 +77,7 @@
             Btn6.ForeColor = Color.FromArgb(0, 126, 249);
             Btn6.Image = (Image)resources.GetObject("Btn6.Image");
             Btn6.ImageAlign = ContentAlignment.MiddleRight;
-            Btn6.Location = new Point(0, 711);
+            Btn6.Location = new Point(0, 811);
             Btn6.Name = "Btn6";
             Btn6.Size = new Size(300, 42);
             Btn6.TabIndex = 6;
@@ -149,7 +149,7 @@
             PnlFormLoader.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             PnlFormLoader.Location = new Point(300, 160);
             PnlFormLoader.Name = "PnlFormLoader";
-            PnlFormLoader.Size = new Size(882, 593);
+            PnlFormLoader.Size = new Size(882, 693);
             PnlFormLoader.TabIndex = 0;
             // 
             // IblTittle
@@ -194,11 +194,11 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
-            ClientSize = new Size(1182, 753);
+            ClientSize = new Size(1182, 853);
             Controls.Add(panel3);
             Controls.Add(PnlFormLoader);
             Controls.Add(panel1);
-            MinimumSize = new Size(1200, 800);
+            MinimumSize = new Size(1200, 900);
             Name = "Menu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu";

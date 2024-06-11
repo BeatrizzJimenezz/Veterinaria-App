@@ -37,17 +37,18 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.BackColor = Color.DarkCyan;
-            flowLayoutPanel1.Location = new Point(24, 79);
+            flowLayoutPanel1.Location = new Point(12, 79);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1111, 560);
+            flowLayoutPanel1.Size = new Size(835, 489);
             flowLayoutPanel1.TabIndex = 0;
             // 
             // lblNombrePaciente
             // 
             lblNombrePaciente.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNombrePaciente.ForeColor = Color.FromArgb(158, 161, 176);
-            lblNombrePaciente.Location = new Point(337, 21);
+            lblNombrePaciente.Location = new Point(306, 20);
             lblNombrePaciente.Name = "lblNombrePaciente";
             lblNombrePaciente.Size = new Size(389, 42);
             lblNombrePaciente.TabIndex = 63;
@@ -57,7 +58,7 @@
             // 
             lblDatosPaciente.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDatosPaciente.ForeColor = Color.FromArgb(158, 161, 176);
-            lblDatosPaciente.Location = new Point(24, 21);
+            lblDatosPaciente.Location = new Point(12, 20);
             lblDatosPaciente.Name = "lblDatosPaciente";
             lblDatosPaciente.Size = new Size(334, 42);
             lblDatosPaciente.TabIndex = 62;
@@ -71,7 +72,7 @@
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Nirmala UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(965, 43);
+            btnAgregar.Location = new Point(678, 27);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(170, 30);
             btnAgregar.TabIndex = 64;
@@ -83,14 +84,15 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             BackColor = Color.FromArgb(32, 42, 64);
-            ClientSize = new Size(1155, 678);
+            ClientSize = new Size(860, 593);
             Controls.Add(btnAgregar);
             Controls.Add(lblNombrePaciente);
             Controls.Add(lblDatosPaciente);
             Controls.Add(flowLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
-            MinimumSize = new Size(1155, 678);
+            MinimumSize = new Size(860, 593);
             Name = "ExpVacunas";
             Text = "ExpVacunas";
             Activated += ExpVacunas_Activated;

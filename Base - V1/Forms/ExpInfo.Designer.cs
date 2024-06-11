@@ -92,10 +92,10 @@
             // 
             // cbEdicion
             // 
-            cbEdicion.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            cbEdicion.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             cbEdicion.AutoSize = true;
             cbEdicion.ForeColor = SystemColors.ButtonFace;
-            cbEdicion.Location = new Point(692, 456);
+            cbEdicion.Location = new Point(690, 483);
             cbEdicion.Name = "cbEdicion";
             cbEdicion.Size = new Size(142, 24);
             cbEdicion.TabIndex = 65;
@@ -105,7 +105,7 @@
             // 
             // txtSeñas
             // 
-            txtSeñas.Location = new Point(654, 127);
+            txtSeñas.Location = new Point(652, 154);
             txtSeñas.Name = "txtSeñas";
             txtSeñas.Size = new Size(157, 27);
             txtSeñas.TabIndex = 64;
@@ -114,7 +114,7 @@
             // 
             txtEdad.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             txtEdad.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtEdad.Location = new Point(654, 59);
+            txtEdad.Location = new Point(652, 86);
             txtEdad.Name = "txtEdad";
             txtEdad.Size = new Size(159, 30);
             txtEdad.TabIndex = 63;
@@ -123,7 +123,7 @@
             // 
             lblNombrePaciente.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNombrePaciente.ForeColor = Color.FromArgb(158, 161, 176);
-            lblNombrePaciente.Location = new Point(259, 0);
+            lblNombrePaciente.Location = new Point(257, 27);
             lblNombrePaciente.Name = "lblNombrePaciente";
             lblNombrePaciente.Size = new Size(389, 42);
             lblNombrePaciente.TabIndex = 61;
@@ -131,11 +131,11 @@
             // 
             // label13
             // 
-            label13.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label13.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label13.AutoSize = true;
             label13.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label13.ForeColor = Color.White;
-            label13.Location = new Point(579, 402);
+            label13.Location = new Point(577, 429);
             label13.Name = "label13";
             label13.Size = new Size(90, 23);
             label13.TabIndex = 60;
@@ -143,20 +143,20 @@
             // 
             // txtTelefono
             // 
-            txtTelefono.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            txtTelefono.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             txtTelefono.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtTelefono.Location = new Point(675, 399);
+            txtTelefono.Location = new Point(673, 426);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(150, 30);
             txtTelefono.TabIndex = 59;
             // 
             // label14
             // 
-            label14.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label14.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label14.AutoSize = true;
             label14.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label14.ForeColor = Color.White;
-            label14.Location = new Point(20, 402);
+            label14.Location = new Point(18, 429);
             label14.Name = "label14";
             label14.Size = new Size(77, 23);
             label14.TabIndex = 58;
@@ -164,20 +164,20 @@
             // 
             // txtCorreo
             // 
-            txtCorreo.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtCorreo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtCorreo.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCorreo.Location = new Point(138, 399);
+            txtCorreo.Location = new Point(136, 426);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(424, 30);
             txtCorreo.TabIndex = 57;
             // 
             // label11
             // 
-            label11.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label11.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label11.AutoSize = true;
             label11.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(20, 327);
+            label11.Location = new Point(18, 354);
             label11.Name = "label11";
             label11.Size = new Size(97, 23);
             label11.TabIndex = 56;
@@ -185,9 +185,9 @@
             // 
             // txtDireccion
             // 
-            txtDireccion.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtDireccion.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtDireccion.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDireccion.Location = new Point(138, 324);
+            txtDireccion.Location = new Point(136, 351);
             txtDireccion.Multiline = true;
             txtDireccion.Name = "txtDireccion";
             txtDireccion.Size = new Size(687, 50);
@@ -195,11 +195,11 @@
             // 
             // label10
             // 
-            label10.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label10.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label10.AutoSize = true;
             label10.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(20, 273);
+            label10.Location = new Point(18, 300);
             label10.Name = "label10";
             label10.Size = new Size(112, 23);
             label10.TabIndex = 54;
@@ -207,9 +207,9 @@
             // 
             // txtNombrePro
             // 
-            txtNombrePro.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtNombrePro.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtNombrePro.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombrePro.Location = new Point(138, 270);
+            txtNombrePro.Location = new Point(136, 297);
             txtNombrePro.Name = "txtNombrePro";
             txtNombrePro.Size = new Size(687, 30);
             txtNombrePro.TabIndex = 53;
@@ -220,7 +220,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(579, 127);
+            label8.Location = new Point(577, 154);
             label8.Name = "label8";
             label8.Size = new Size(72, 23);
             label8.TabIndex = 50;
@@ -231,7 +231,7 @@
             cbSexo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             cbSexo.FormattingEnabled = true;
             cbSexo.Items.AddRange(new object[] { "Femenino", "Masculino" });
-            cbSexo.Location = new Point(120, 130);
+            cbSexo.Location = new Point(118, 157);
             cbSexo.Name = "cbSexo";
             cbSexo.Size = new Size(152, 28);
             cbSexo.TabIndex = 48;
@@ -242,7 +242,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(307, 133);
+            label5.Location = new Point(305, 160);
             label5.Name = "label5";
             label5.Size = new Size(63, 23);
             label5.TabIndex = 47;
@@ -255,7 +255,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(24, 133);
+            label6.Location = new Point(22, 160);
             label6.Name = "label6";
             label6.Size = new Size(60, 23);
             label6.TabIndex = 46;
@@ -263,7 +263,7 @@
             // 
             // txtColor
             // 
-            txtColor.Location = new Point(376, 129);
+            txtColor.Location = new Point(374, 156);
             txtColor.Name = "txtColor";
             txtColor.Size = new Size(157, 27);
             txtColor.TabIndex = 62;
@@ -274,7 +274,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(586, 59);
+            label7.Location = new Point(584, 86);
             label7.Name = "label7";
             label7.Size = new Size(62, 23);
             label7.TabIndex = 44;
@@ -286,7 +286,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(307, 62);
+            label4.Location = new Point(305, 89);
             label4.Name = "label4";
             label4.Size = new Size(61, 23);
             label4.TabIndex = 42;
@@ -298,7 +298,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(24, 62);
+            label3.Location = new Point(22, 89);
             label3.Name = "label3";
             label3.Size = new Size(86, 23);
             label3.TabIndex = 41;
@@ -308,7 +308,7 @@
             // 
             txtRaza.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             txtRaza.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtRaza.Location = new Point(374, 59);
+            txtRaza.Location = new Point(372, 86);
             txtRaza.Name = "txtRaza";
             txtRaza.Size = new Size(159, 30);
             txtRaza.TabIndex = 40;
@@ -317,7 +317,7 @@
             // 
             txtEspecie.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             txtEspecie.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtEspecie.Location = new Point(120, 59);
+            txtEspecie.Location = new Point(118, 86);
             txtEspecie.Name = "txtEspecie";
             txtEspecie.Size = new Size(152, 30);
             txtEspecie.TabIndex = 39;
@@ -326,7 +326,7 @@
             // 
             lblDatosPaciente.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDatosPaciente.ForeColor = Color.FromArgb(158, 161, 176);
-            lblDatosPaciente.Location = new Point(24, 0);
+            lblDatosPaciente.Location = new Point(22, 27);
             lblDatosPaciente.Name = "lblDatosPaciente";
             lblDatosPaciente.Size = new Size(238, 42);
             lblDatosPaciente.TabIndex = 38;
@@ -334,10 +334,10 @@
             // 
             // lblDatosPropietario
             // 
-            lblDatosPropietario.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblDatosPropietario.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             lblDatosPropietario.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDatosPropietario.ForeColor = Color.FromArgb(158, 161, 176);
-            lblDatosPropietario.Location = new Point(20, 185);
+            lblDatosPropietario.Location = new Point(18, 212);
             lblDatosPropietario.Name = "lblDatosPropietario";
             lblDatosPropietario.Size = new Size(327, 42);
             lblDatosPropietario.TabIndex = 37;

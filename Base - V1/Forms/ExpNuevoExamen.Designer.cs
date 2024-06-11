@@ -98,7 +98,7 @@
             // 
             lblNombrePaciente.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNombrePaciente.ForeColor = Color.FromArgb(158, 161, 176);
-            lblNombrePaciente.Location = new Point(350, 9);
+            lblNombrePaciente.Location = new Point(324, 9);
             lblNombrePaciente.Name = "lblNombrePaciente";
             lblNombrePaciente.Size = new Size(389, 42);
             lblNombrePaciente.TabIndex = 65;
@@ -108,7 +108,7 @@
             // 
             lblDatosPaciente.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDatosPaciente.ForeColor = Color.FromArgb(158, 161, 176);
-            lblDatosPaciente.Location = new Point(24, 9);
+            lblDatosPaciente.Location = new Point(12, 9);
             lblDatosPaciente.Name = "lblDatosPaciente";
             lblDatosPaciente.Size = new Size(402, 42);
             lblDatosPaciente.TabIndex = 64;
@@ -167,10 +167,10 @@
             panel2.Controls.Add(textBox3);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(labelTenencia);
-            panel2.Location = new Point(34, 66);
-            panel2.MinimumSize = new Size(1050, 528);
+            panel2.Location = new Point(12, 67);
+            panel2.MinimumSize = new Size(837, 528);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1050, 528);
+            panel2.Size = new Size(837, 528);
             panel2.TabIndex = 85;
             // 
             // textBox25
@@ -180,7 +180,7 @@
             textBox25.Location = new Point(24, 450);
             textBox25.Multiline = true;
             textBox25.Name = "textBox25";
-            textBox25.Size = new Size(996, 65);
+            textBox25.Size = new Size(801, 65);
             textBox25.TabIndex = 135;
             // 
             // label23
@@ -199,9 +199,9 @@
             // 
             textBox19.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox19.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox19.Location = new Point(685, 382);
+            textBox19.Location = new Point(666, 382);
             textBox19.Name = "textBox19";
-            textBox19.Size = new Size(337, 30);
+            textBox19.Size = new Size(159, 30);
             textBox19.TabIndex = 131;
             // 
             // label21
@@ -210,7 +210,7 @@
             label21.AutoSize = true;
             label21.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label21.ForeColor = Color.White;
-            label21.Location = new Point(536, 385);
+            label21.Location = new Point(517, 385);
             label21.Name = "label21";
             label21.Size = new Size(150, 23);
             label21.TabIndex = 130;
@@ -220,9 +220,9 @@
             // 
             textBox20.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             textBox20.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox20.Location = new Point(161, 382);
+            textBox20.Location = new Point(92, 382);
             textBox20.Name = "textBox20";
-            textBox20.Size = new Size(350, 30);
+            textBox20.Size = new Size(419, 30);
             textBox20.TabIndex = 129;
             // 
             // label22
@@ -231,7 +231,7 @@
             label22.AutoSize = true;
             label22.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label22.ForeColor = Color.White;
-            label22.Location = new Point(24, 385);
+            label22.Location = new Point(23, 385);
             label22.Name = "label22";
             label22.Size = new Size(73, 23);
             label22.TabIndex = 128;
@@ -241,7 +241,7 @@
             // 
             textBox16.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             textBox16.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox16.Location = new Point(863, 343);
+            textBox16.Location = new Point(666, 343);
             textBox16.Name = "textBox16";
             textBox16.Size = new Size(159, 30);
             textBox16.TabIndex = 127;
@@ -252,7 +252,7 @@
             label18.AutoSize = true;
             label18.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label18.ForeColor = Color.White;
-            label18.Location = new Point(755, 346);
+            label18.Location = new Point(559, 346);
             label18.Name = "label18";
             label18.Size = new Size(109, 23);
             label18.TabIndex = 126;
@@ -262,9 +262,9 @@
             // 
             textBox17.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox17.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox17.Location = new Point(513, 343);
+            textBox17.Location = new Point(428, 343);
             textBox17.Name = "textBox17";
-            textBox17.Size = new Size(179, 30);
+            textBox17.Size = new Size(125, 30);
             textBox17.TabIndex = 125;
             // 
             // label19
@@ -273,7 +273,7 @@
             label19.AutoSize = true;
             label19.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label19.ForeColor = Color.White;
-            label19.Location = new Point(350, 346);
+            label19.Location = new Point(264, 346);
             label19.Name = "label19";
             label19.Size = new Size(144, 23);
             label19.TabIndex = 124;
@@ -304,7 +304,7 @@
             // 
             textBox13.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             textBox13.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox13.Location = new Point(863, 307);
+            textBox13.Location = new Point(666, 307);
             textBox13.Name = "textBox13";
             textBox13.Size = new Size(159, 30);
             textBox13.TabIndex = 121;
@@ -315,7 +315,7 @@
             label15.AutoSize = true;
             label15.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label15.ForeColor = Color.White;
-            label15.Location = new Point(778, 310);
+            label15.Location = new Point(582, 310);
             label15.Name = "label15";
             label15.Size = new Size(90, 23);
             label15.TabIndex = 120;
@@ -325,9 +325,9 @@
             // 
             textBox14.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox14.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox14.Location = new Point(513, 307);
+            textBox14.Location = new Point(428, 307);
             textBox14.Name = "textBox14";
-            textBox14.Size = new Size(179, 30);
+            textBox14.Size = new Size(125, 30);
             textBox14.TabIndex = 119;
             // 
             // label16
@@ -336,7 +336,7 @@
             label16.AutoSize = true;
             label16.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label16.ForeColor = Color.White;
-            label16.Location = new Point(350, 310);
+            label16.Location = new Point(325, 314);
             label16.Name = "label16";
             label16.Size = new Size(77, 23);
             label16.TabIndex = 118;
@@ -369,7 +369,7 @@
             textBox4.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox4.Location = new Point(685, 267);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(337, 30);
+            textBox4.Size = new Size(140, 30);
             textBox4.TabIndex = 115;
             // 
             // label7
@@ -390,7 +390,7 @@
             textBox6.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox6.Location = new Point(161, 267);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(352, 30);
+            textBox6.Size = new Size(350, 30);
             textBox6.TabIndex = 113;
             // 
             // label8
@@ -411,7 +411,7 @@
             textBox10.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox10.Location = new Point(685, 228);
             textBox10.Name = "textBox10";
-            textBox10.Size = new Size(337, 30);
+            textBox10.Size = new Size(140, 30);
             textBox10.TabIndex = 111;
             // 
             // label12
@@ -432,7 +432,7 @@
             textBox12.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox12.Location = new Point(161, 228);
             textBox12.Name = "textBox12";
-            textBox12.Size = new Size(352, 30);
+            textBox12.Size = new Size(350, 30);
             textBox12.TabIndex = 109;
             // 
             // label14
@@ -451,9 +451,9 @@
             // 
             textBox9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox9.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox9.Location = new Point(685, 145);
+            textBox9.Location = new Point(666, 145);
             textBox9.Name = "textBox9";
-            textBox9.Size = new Size(337, 30);
+            textBox9.Size = new Size(159, 30);
             textBox9.TabIndex = 107;
             // 
             // label4
@@ -493,16 +493,16 @@
             // 
             txtBoxLesiones.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtBoxLesiones.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBoxLesiones.Location = new Point(685, 101);
+            txtBoxLesiones.Location = new Point(666, 101);
             txtBoxLesiones.Name = "txtBoxLesiones";
-            txtBoxLesiones.Size = new Size(337, 30);
+            txtBoxLesiones.Size = new Size(159, 30);
             txtBoxLesiones.TabIndex = 101;
             // 
             // textBox5
             // 
             textBox5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             textBox5.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(863, 58);
+            textBox5.Location = new Point(666, 58);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(159, 30);
             textBox5.TabIndex = 103;
@@ -525,7 +525,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(790, 61);
+            label5.Location = new Point(598, 61);
             label5.Name = "label5";
             label5.Size = new Size(64, 23);
             label5.TabIndex = 102;
@@ -556,9 +556,9 @@
             // 
             textBox7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox7.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox7.Location = new Point(513, 58);
+            textBox7.Location = new Point(428, 58);
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(179, 30);
+            textBox7.Size = new Size(159, 30);
             textBox7.TabIndex = 101;
             // 
             // label6
@@ -567,7 +567,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(350, 61);
+            label6.Location = new Point(263, 61);
             label6.Name = "label6";
             label6.Size = new Size(141, 23);
             label6.TabIndex = 100;
@@ -598,7 +598,7 @@
             // 
             textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             textBox2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(863, 19);
+            textBox2.Location = new Point(666, 19);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(159, 30);
             textBox2.TabIndex = 97;
@@ -609,7 +609,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(790, 22);
+            label2.Location = new Point(598, 22);
             label2.Name = "label2";
             label2.Size = new Size(42, 23);
             label2.TabIndex = 96;
@@ -619,9 +619,9 @@
             // 
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(513, 19);
+            textBox1.Location = new Point(428, 19);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(179, 30);
+            textBox1.Size = new Size(159, 30);
             textBox1.TabIndex = 95;
             // 
             // label1
@@ -630,7 +630,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(350, 22);
+            label1.Location = new Point(263, 22);
             label1.Name = "label1";
             label1.Size = new Size(162, 23);
             label1.TabIndex = 94;
@@ -651,7 +651,7 @@
             textBox3.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox3.Location = new Point(262, 189);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(760, 30);
+            textBox3.Size = new Size(563, 30);
             textBox3.TabIndex = 83;
             // 
             // label3
@@ -686,10 +686,10 @@
             panel1.Controls.Add(textBox24);
             panel1.Controls.Add(textBox22);
             panel1.Controls.Add(label24);
-            panel1.Location = new Point(34, 624);
-            panel1.MinimumSize = new Size(1050, 236);
+            panel1.Location = new Point(12, 623);
+            panel1.MinimumSize = new Size(837, 236);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1050, 236);
+            panel1.Size = new Size(837, 236);
             panel1.TabIndex = 86;
             // 
             // label25
@@ -698,7 +698,7 @@
             label25.AutoSize = true;
             label25.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label25.ForeColor = Color.White;
-            label25.Location = new Point(451, 127);
+            label25.Location = new Point(344, 127);
             label25.Name = "label25";
             label25.Size = new Size(143, 23);
             label25.TabIndex = 136;
@@ -712,7 +712,7 @@
             textBox24.Location = new Point(26, 153);
             textBox24.Multiline = true;
             textBox24.Name = "textBox24";
-            textBox24.Size = new Size(994, 60);
+            textBox24.Size = new Size(799, 60);
             textBox24.TabIndex = 134;
             // 
             // textBox22
@@ -722,7 +722,7 @@
             textBox22.Location = new Point(24, 46);
             textBox22.Multiline = true;
             textBox22.Name = "textBox22";
-            textBox22.Size = new Size(996, 60);
+            textBox22.Size = new Size(801, 60);
             textBox22.TabIndex = 135;
             // 
             // label24
@@ -731,7 +731,7 @@
             label24.AutoSize = true;
             label24.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label24.ForeColor = Color.White;
-            label24.Location = new Point(449, 20);
+            label24.Location = new Point(342, 20);
             label24.Name = "label24";
             label24.Size = new Size(142, 23);
             label24.TabIndex = 134;
@@ -746,18 +746,18 @@
             panel3.Controls.Add(btnNewExamen);
             panel3.Controls.Add(textBox21);
             panel3.Controls.Add(label27);
-            panel3.Location = new Point(34, 896);
-            panel3.MinimumSize = new Size(1050, 160);
+            panel3.Location = new Point(12, 874);
+            panel3.MinimumSize = new Size(837, 160);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1050, 160);
+            panel3.Size = new Size(837, 160);
             panel3.TabIndex = 138;
             // 
             // cbEditar
             // 
-            cbEditar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            cbEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             cbEditar.AutoSize = true;
             cbEditar.ForeColor = SystemColors.ButtonHighlight;
-            cbEditar.Location = new Point(712, 115);
+            cbEditar.Location = new Point(517, 115);
             cbEditar.Name = "cbEditar";
             cbEditar.Size = new Size(142, 24);
             cbEditar.TabIndex = 198;
@@ -767,13 +767,13 @@
             // 
             // btnNewExamen
             // 
-            btnNewExamen.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnNewExamen.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnNewExamen.BackColor = Color.FromArgb(0, 126, 249);
             btnNewExamen.FlatAppearance.BorderSize = 0;
             btnNewExamen.FlatStyle = FlatStyle.Flat;
             btnNewExamen.Font = new Font("Nirmala UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnNewExamen.ForeColor = Color.White;
-            btnNewExamen.Location = new Point(860, 110);
+            btnNewExamen.Location = new Point(665, 110);
             btnNewExamen.Name = "btnNewExamen";
             btnNewExamen.Size = new Size(160, 30);
             btnNewExamen.TabIndex = 197;
@@ -788,7 +788,7 @@
             textBox21.Location = new Point(26, 44);
             textBox21.Multiline = true;
             textBox21.Name = "textBox21";
-            textBox21.Size = new Size(994, 60);
+            textBox21.Size = new Size(799, 60);
             textBox21.TabIndex = 137;
             // 
             // label27
@@ -797,7 +797,7 @@
             label27.AutoSize = true;
             label27.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label27.ForeColor = Color.White;
-            label27.Location = new Point(406, 18);
+            label27.Location = new Point(299, 18);
             label27.Name = "label27";
             label27.Size = new Size(235, 23);
             label27.TabIndex = 134;
@@ -810,14 +810,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.FromArgb(32, 42, 64);
-            ClientSize = new Size(1155, 678);
+            ClientSize = new Size(882, 593);
             Controls.Add(panel3);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Controls.Add(lblNombrePaciente);
             Controls.Add(lblDatosPaciente);
             FormBorderStyle = FormBorderStyle.None;
-            MinimumSize = new Size(1155, 678);
+            MinimumSize = new Size(882, 593);
             Name = "ExpNuevoExamen";
             Text = "ExpNuevoExamen";
             panel2.ResumeLayout(false);
