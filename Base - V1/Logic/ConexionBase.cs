@@ -17,11 +17,24 @@ namespace Base___V1.Logic
 
         public MySqlConnection abrirConexion()
         {
-            if(Conexion.State == System.Data.ConnectionState.Closed)
+            try
             {
-                Conexion.Open();
+                if (Conexion.State == System.Data.ConnectionState.Closed)
+                {
+                    Conexion.Open();
+                }
+                return Conexion;
             }
-            return Conexion;
+            catch (Exception ex)
+            {
+                {
+                    MessageBox.Show("Error al conectar a la base de datos, por favor verifique la conexión del servidor",
+                        "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    abrirConexion();
+                }
+                return Conexion;
+
+            }
         }
         public MySqlConnection cerrarConexion()
         {
