@@ -55,7 +55,7 @@ namespace Base___V1
             catch(Exception ex) {
                 Console.WriteLine(ex.ToString());
             }
-            if(key == "84732"){
+            if(key == "12345"){
                 Menu menu_vrb = new Menu();
                 menu_vrb.Show();
                 this.Close();
@@ -181,7 +181,7 @@ namespace Base___V1
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            if (textBox2.Text == "")
+            if (textBox5.Text == "")
             {
                 textBox4.Select();
             }else{
