@@ -1,5 +1,6 @@
 ﻿using Base___V1.Logic;
 using Base___V1.Models;
+using Microsoft.VisualBasic.Devices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Mysqlx.Expect.Open.Types.Condition.Types;
 
 namespace Base___V1
 {
@@ -45,9 +47,19 @@ namespace Base___V1
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Menu menu_vrb = new Menu();
-            menu_vrb.Show();
-            this.Close();
+            string key = "";
+            try
+            {
+                key = textBox1.Text + textBox2.Text + textBox3.Text + textBox4.Text + textBox5.Text;
+            }
+            catch(Exception ex) {
+                Console.WriteLine(ex.ToString());
+            }
+            if(key == "84732"){
+                Menu menu_vrb = new Menu();
+                menu_vrb.Show();
+                this.Close();
+            }
         }
         public void envioTerminado(object o, RunWorkerCompletedEventArgs e)
         {
@@ -66,7 +78,7 @@ namespace Base___V1
             if (ultimaVezEnviado != hoy)
             {
                 List<ids> ids = data.obtenerMascotas();
-                
+
                 for (int i = 0; i < ids.Count; i++)
                 {
                     Mascota m = data.getMascota(ids[i].idMascota);
@@ -121,6 +133,60 @@ namespace Base___V1
             }
 
             File.WriteAllText(FilePath, date.ToString("yyyy-MM-dd"));
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "")
+            {
+                textBox2.Select();
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox2.Text != "")
+            {
+                textBox3.Select();
+            }
+            else
+            {
+                textBox1.Select();
+            }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox3.Text != "")
+            {
+                textBox4.Select();
+            }
+            else
+            {
+                textBox2.Select();
+            }
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox4.Text != "")
+            {
+                textBox5.Select();
+            }
+            else
+            {
+                textBox3.Select();
+            }
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                textBox4.Select();
+            }else{
+                button1.Select();
+            }
         }
     }
 }

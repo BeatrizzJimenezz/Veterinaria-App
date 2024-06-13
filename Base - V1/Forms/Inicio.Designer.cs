@@ -84,6 +84,7 @@
             textBox1.TabIndex = 3;
             textBox1.TextAlign = HorizontalAlignment.Center;
             textBox1.UseSystemPasswordChar = true;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // button1
             // 
@@ -123,6 +124,7 @@
             textBox2.TextAlign = HorizontalAlignment.Center;
             textBox2.UseSystemPasswordChar = true;
             textBox2.WordWrap = false;
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // textBox3
             // 
@@ -143,6 +145,7 @@
             textBox3.TabIndex = 6;
             textBox3.TextAlign = HorizontalAlignment.Center;
             textBox3.UseSystemPasswordChar = true;
+            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // textBox4
             // 
@@ -163,6 +166,7 @@
             textBox4.TabIndex = 7;
             textBox4.TextAlign = HorizontalAlignment.Center;
             textBox4.UseSystemPasswordChar = true;
+            textBox4.TextChanged += textBox4_TextChanged;
             // 
             // textBox5
             // 
@@ -183,6 +187,7 @@
             textBox5.TabIndex = 8;
             textBox5.TextAlign = HorizontalAlignment.Center;
             textBox5.UseSystemPasswordChar = true;
+            textBox5.TextChanged += textBox5_TextChanged;
             // 
             // Inicio
             // 
