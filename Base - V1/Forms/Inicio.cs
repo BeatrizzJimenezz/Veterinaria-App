@@ -47,6 +47,7 @@ namespace Base___V1
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            QuerysSQL data = new QuerysSQL();
             string key = "";
             try
             {
@@ -55,10 +56,14 @@ namespace Base___V1
             catch(Exception ex) {
                 Console.WriteLine(ex.ToString());
             }
-            if(key == "12345"){
+            if(data.getClave(key)){
                 Menu menu_vrb = new Menu();
                 menu_vrb.Show();
                 this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Pin equivocado", "Alerta");
             }
         }
         public void envioTerminado(object o, RunWorkerCompletedEventArgs e)

@@ -84,6 +84,64 @@ namespace Base___V1.Logic
                 return 0;
             }
         }
+        public bool getClave(String key)
+        {
+            int id = 1;
+            Comando.Connection = Conexion.abrirConexion();
+            Comando.CommandText = $"SELECT * FROM tb_key WHERE id = {id}";
+            Comando.CommandType = CommandType.Text;
+            MySqlDataReader dr = Comando.ExecuteReader();
+            string clave = "";
+            if (dr.Read())
+            {
+                clave = dr["clave"].ToString();
+                Conexion.cerrarConexion();
+                if(key == clave)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                
+            }
+            else
+            {
+                Conexion.cerrarConexion();
+                MessageBox.Show("Error al cargar la informacion de la mascota", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+        public bool updateClave(string new_key, string old_key)
+        {
+            if (getClave(old_key))
+            {
+                try
+                {
+                    Comando.Connection = Conexion.abrirConexion();
+                    Comando.CommandText = $"UPDATE tb_key SET clave = '{new_key}' WHERE id = {1}";
+                    Comando.CommandType = CommandType.Text;
+                    Comando.ExecuteNonQuery();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    MessageBox.Show("Error al editar los datos del paciente. Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+                finally
+                {
+                    Conexion.cerrarConexion();
+                }
+
+            }
+            else
+            {
+                return false;
+            }
+        }
         public DataGridView ListarInformacion(DataGridView dataGridView)
         {
             // Consulta SQL para obtener los datos requeridos de ambas tablas
