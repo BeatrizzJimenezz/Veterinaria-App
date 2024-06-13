@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Base___V1.Logic;
+using Base___V1.Models;
 
 
 namespace Base___V1
@@ -34,16 +35,22 @@ namespace Base___V1
                 DataGridViewRow filaSeleccionada = tblPacientes.Rows[e.RowIndex];
                 string idDueño = filaSeleccionada.Cells["DueñoID"].Value.ToString();
                 string idMascota = filaSeleccionada.Cells["MascotaID"].Value.ToString();
-
-
-                menu.PnlFormLoader.Controls.Clear();
-                menu.textBox1.TextChanged -= txtBusquedaPaciente;
-                menu.textBox1.Text = "";
-                menu.SetPlaceholder(menu.textBox1, "Busca algo...");
-                ExpedienteVistaPrincipal pantalla2_vrb = new ExpedienteVistaPrincipal(idMascota, idDueño, menu) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                pantalla2_vrb.FormBorderStyle = FormBorderStyle.None;
-                menu.PnlFormLoader.Controls.Add(pantalla2_vrb);
-                pantalla2_vrb.Show();
+                
+                if (idDueño != "")
+                {                    
+                    menu.PnlFormLoader.Controls.Clear();
+                    menu.textBox1.TextChanged -= txtBusquedaPaciente;
+                    menu.textBox1.Text = "";
+                    menu.SetPlaceholder(menu.textBox1, "Busca algo...");
+                    ExpedienteVistaPrincipal pantalla2_vrb = new ExpedienteVistaPrincipal(idMascota, idDueño, menu) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                    pantalla2_vrb.FormBorderStyle = FormBorderStyle.None;
+                    menu.PnlFormLoader.Controls.Add(pantalla2_vrb);
+                    pantalla2_vrb.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un campo que no este vacio!");
+                }
             }
         }
 
@@ -60,6 +67,5 @@ namespace Base___V1
             }
 
         }
-
     }
 }

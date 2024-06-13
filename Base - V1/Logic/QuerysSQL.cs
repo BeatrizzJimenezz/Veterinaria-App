@@ -879,6 +879,44 @@ namespace Base___V1.Logic
                 Conexion.cerrarConexion();
             }
         }
+
+            public List<ids> obtenerMascotas()
+            {
+                List<ids> vac = new List<ids>();
+
+                try
+                {
+                    Comando.Connection = Conexion.abrirConexion();
+                    Comando.CommandText = $@"SELECT d.idDueño AS DueñoID,
+       m.idMascota AS MascotaID
+FROM tb_dueño d
+INNER JOIN tb_mascota m ON d.idDueño = m.idDueño; ";
+                    Comando.CommandType = CommandType.Text;
+                    var dr = Comando.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        ids idss = new ids
+                        {
+                            idMascota = dr.GetInt32("MascotaID"),
+                            idDueño = dr.GetInt32("DueñoID")
+                        };
+
+                        vac.Add(idss);
+                    }
+
+                    return vac;
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Error al obtener las vacunas " + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return vac;
+                }
+                finally
+                {
+                    Conexion.cerrarConexion();
+                }
+            }
     }
 }   
 

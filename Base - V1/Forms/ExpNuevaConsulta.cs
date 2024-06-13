@@ -116,7 +116,7 @@ namespace Base___V1
         public void cargarDatos(int idConsulta)
         {
             Consulta consulta = data.getConsulta(idConsulta);
-
+            txtBoxMotivoConsulta.Text = consulta.MotivoConsulta ;
             checkVacuna.Checked = consulta.InVacunas == 1;
             checkQuintuple.Checked = consulta.InQuintuple == 1;
             checkTriFelina.Checked = consulta.InTripleFelina == 1;
@@ -281,7 +281,7 @@ namespace Base___V1
             consulta.IdMascota = int.Parse(idMascota);
             DateTime fechaHoraActual = DateTime.Now;
             consulta.FechaRealizado = fechaHoraActual.ToString("dd/MM/yyyy HH:mm");
-            consulta.MotivoConsulta = "Mareos";//Aqui poner el textBox para motivo de la consulta
+            consulta.MotivoConsulta = txtBoxMotivoConsulta.Text;//Aqui poner el textBox para motivo de la consulta
 
             return consulta;
         }

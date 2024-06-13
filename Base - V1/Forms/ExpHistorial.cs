@@ -43,15 +43,21 @@ namespace Base___V1
             {
                 DataGridViewRow filaSeleccionada = tblHistorialConsultas.Rows[e.RowIndex];
                 string idConsulta = filaSeleccionada.Cells["ConsultaID"].Value.ToString();
-
-                menu2.textBox1.TextChanged -= txtbusqueda;
-                menu.PnlFormLoader2.Controls.Clear();
-                menu2.textBox1.Text = "";
-                menu2.SetPlaceholder(menu2.textBox1, "Busca algo...");
-                ExpNuevaConsulta abrirHistorial = new ExpNuevaConsulta(idDueño, idMascota, false, int.Parse(idConsulta),menu) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                abrirHistorial.FormBorderStyle = FormBorderStyle.None;
-                menu.PnlFormLoader2.Controls.Add(abrirHistorial);
-                abrirHistorial.Show();
+                if (idConsulta != "")
+                {
+                    menu2.textBox1.TextChanged -= txtbusqueda;
+                    menu.PnlFormLoader2.Controls.Clear();
+                    menu2.textBox1.Text = "";
+                    menu2.SetPlaceholder(menu2.textBox1, "Busca algo...");
+                    ExpNuevaConsulta abrirHistorial = new ExpNuevaConsulta(idDueño, idMascota, false, int.Parse(idConsulta),menu) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                    abrirHistorial.FormBorderStyle = FormBorderStyle.None;
+                    menu.PnlFormLoader2.Controls.Add(abrirHistorial);
+                    abrirHistorial.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un campo que no este vacio!");
+                }
             }
         }
         private void txtbusqueda(object sender, EventArgs e) {
