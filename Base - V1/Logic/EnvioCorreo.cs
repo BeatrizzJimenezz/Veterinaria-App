@@ -12,46 +12,53 @@ namespace Base___V1.Logic
 {
     internal class EnvioCorreo
     {
-        public string myEmail = "josueisaac684@gmail.com";
-        public string MyPassword = "cwwt quuj pxtk syoq";
+        public string myEmail = "veterinariaelcorralsv@gmail.com";
+        public string MyPassword = "oiwp vhjv azqt sshq";
         public string MyAlias = "Veterinaria El Corral";
         public string[] myAdjuntos;
         public MailMessage mCorreo;
-        public EnvioCorreo(string correo, string dueño, string paciente, int diasRestantes,string encabezado, string nombreVacuna)
+       public EnvioCorreo(string correo, string dueño, string paciente, int diasRestantes, string encabezado, string nombreVacuna)
+{
+    try
+    {
+        using (MailMessage mCorreo = new MailMessage())
         {
-            try
-              {
-                    mCorreo =  new MailMessage();
-                mCorreo.From = new MailAddress(myEmail, MyAlias, System.Text.Encoding.UTF8);
-                mCorreo.To.Add(correo);
-                mCorreo.Subject = encabezado;
-                mCorreo.Body = @$"
-                      Hola estimado {dueño}, el presente correo es para recordarle que a su mascota {paciente}
-                      le faltan {diasRestantes} para la aplicacion de {nombreVacuna}, de ante mano le solicitamos que 
-                      asista al control de su vacuna.
+            mCorreo.From = new MailAddress(myEmail, MyAlias, System.Text.Encoding.UTF8);
+            mCorreo.To.Add(correo);
+            mCorreo.Subject = encabezado;
+            mCorreo.Body = @$"
+                Hola estimado {dueño}, el presente correo es para recordarle que a su mascota {paciente}
+                le faltan {diasRestantes} para la aplicacion de {nombreVacuna}, de ante mano le solicitamos que 
+                asista al control de su vacuna.
 
-Este correo es generado de manera automatica no lo responda
-                      ";
-                mCorreo.IsBodyHtml = true;
-                mCorreo.Priority = MailPriority.High;
+                <br>Este correo es generado de manera automatica no lo responda
+            ";
+            mCorreo.IsBodyHtml = true;
+            mCorreo.Priority = MailPriority.High;
 
-                SmtpClient smtp = new SmtpClient();
-                smtp.UseDefaultCredentials = false;
-                smtp.Port = 25;
-                smtp.Host = "smtp.gmail.com";
-                smtp.Credentials = new System.Net.NetworkCredential(myEmail, MyPassword);
-                ServicePointManager.ServerCertificateValidationCallback = delegate (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors) { return true; };
-                smtp.EnableSsl = true;
-                smtp.Send(mCorreo);
-                MessageBox.Show("Enviado");
-                
-            }
-            catch (Exception e)
+            using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
             {
+                smtp.EnableSsl = true;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new System.Net.NetworkCredential(myEmail, MyPassword);
 
-                MessageBox.Show(e.Message);
-            }   
+                ServicePointManager.ServerCertificateValidationCallback = delegate (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors) { return true; };
+
+                smtp.Send(mCorreo);
+            }
         }
+        MessageBox.Show("Enviado");
+    }
+    catch (SmtpException smtpEx)
+    {
+        MessageBox.Show($"SMTP Error: {smtpEx.Message}");
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show($"General Error: {ex.Message}");
+    }
+}
+
 
         
 
